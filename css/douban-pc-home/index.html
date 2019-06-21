@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>douban pc home</title>   
+    <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div id="anony-nav">
+        <div class="anony-nav-links">
+            <ul>
+                <li><a target="_blank" href="#" class="lnk-book">豆瓣读书</a></li>
+                <li><a target="_blank" href="#" class="lnk-movie">豆瓣电影</a></li>
+                <li><a target="_blank" href="#" class="lnk-music">豆瓣音乐</a></li>
+                <li><a target="_blank" href="#" class="lnk-group">豆瓣小组</a></li>
+                <li><a target="_blank" href="#" class="lnk-events">豆瓣同城</a></li>
+                <li><a target="_blank" href="#" class="lnk-fm">豆瓣FM</a></li>
+                <li><a target="_blank" href="#" class="lnk-shijian">豆瓣时间</a></li>
+                <li><a target="_blank" href="#" class="lnk-market">豆瓣豆品</a></li>
+            </ul>
+        </div>
+        <h1><a href="https://www.douban.com">豆瓣</a></h1>
+        <div class="anony-srh">
+            <form action="https://www.douban.com/search" method="get">
+            <span class="inp">
+                <input type="text" maxlength="60" size="12" placeholder="书籍、电影、音乐、小组、小站、成员" name="q" autocomplete="off">
+            </span>
+            <span class="bn">
+                <input type="submit" value="搜索">
+            </span>
+            </form>
+        </div>
+    </div>
+    <div id="annoy-reg-new" style="background-image: url(https://img1.doubanio.com/view/puppy_image/raw/public/16874860437wq5ntbd7.jpg)">
+        <div class="wrapper">
+            <div class="login"></div>
+            <div class="app">
+                <p class="app-title">
+                    豆瓣<span>6.0</span>
+                </p>
+                <p class="app-slogan"></p>
+                <a href="https://www.douban.com/doubanapp/app?channel=nimingye" class="lnk-app">下载豆瓣 App</a>
+                <div class="app-qr">
+                    <a href="javascript:void 0;" class="lnk-qr" id="expand-qr">
+                        <img src="./images/icon_qrcode_green.png" alt="" width="28" height="28">
+                    </a>
+                    <div class="app-qr-expand">
+                        <img src="./images/doubanapp_qrcode.png" alt="" width="160" height="160">
+                        <p>iOS/Android 扫码直接下载</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>           
+            $('.app-qr').hover(function(){
+                $('.app-qr-expand').addClass('open');
+            },function(){
+                $('.app-qr-expand').removeClass('open');
+            });
+        </script>
+    </div>
+    <div id="anony-sns" class="section">
+        <div class="wrapper">
+            <div id="dale_anonymous_homepage_top_for_crazy_ad" ad-status="loaded"></div>
+            <div class="side">
+                <div style="margin:10px 0px;" class="bhz"></div>
+                <div id="online">
+                    <ul>
+                        <div class="mod">
+                            <h2>热门话题&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·
+                                <span class="p1">&nbsp;(<a href="/gallery/" target="_self">去话题广场</a>)</span>
+                            </h2>
+                            <ul>
+                                <li class="rec_topics"><a href="#" class="rec_topics_name">你想住在哪首诗里？</a><span class="rec_topics_subtitle">99048人浏览</span></li>
+                                <li class="rec_topics"><a href="#" class="rec_topics_name">在什么地方写作能让你灵感迸发？</a><span class="rec_topics_subtitle">18821人浏览</span></li>
+                                <li class="rec_topics"><a href="#" class="rec_topics_name">留住干枯的植物之美</a><span class="rec_topics_subtitle">新话题·83875人浏览</span></li>
+                                <li class="rec_topics"><a href="#" class="rec_topics_name">我的网吧回忆</a><span class="rec_topics_subtitle">447146人浏览</span></li>
+                                <li class="rec_topics"><a href="#" class="rec_topics_name">捕捉探出墙外的植物之美</a><span class="rec_topics_subtitle">7629人浏览</span></li>
+                                <li class="rec_topics"><a href="#" class="rec_topics_name">跟着画卷去旅行</a><span class="rec_topics_subtitle">新话题·8456人浏览</span></li>
+                            </ul>
+                        </div>
+                        <li>
+                            <div id="dale-homepage_online_activety_promo_1" ad-status="loaded"></div>
+                        </li>
+                        <li>
+                            <div id="dale_anonymous_homepage_doublemin" ad-status="loaded"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main">
+                <div class="mod">
+                    <h2>热点内容······
+                        <span>&nbsp;(<a href="#" target="_self">更多</a>)</span>
+                    </h2>
+                    <div class="albums">
+                        <ul>
+                            <li>
+                                <div class="pic"><a href="#"><img src="https://img3.doubanio.com/view/photo/albumcover/public/p2538337402.webp" alt=""></a></div>
+                                <a href="#">汤姆的千种变形样本</a><span class="num">170张照片</span>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="#"><img src="https://img3.doubanio.com/view/photo/albumcover/public/p2211466486.webp" alt=""></a></div>
+                                <a href="#">迷失在地图上的每一道光阴</a><span class="num">95张照片</span>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="#"><img src="https://img3.doubanio.com/view/photo/albumcover/public/p2526214591.webp" alt=""></a></div>
+                                <a href="#">Painting</a><span class="num">32张照片</span>
+                            </li>
+                            <li>
+                                <div class="pic"><a href="#"><img src="https://img1.doubanio.com/view/photo/albumcover/public/p2551191378.webp" alt=""></a></div>
+                                <a href="#">斯 德 哥 尔 摩 地 下 铁</a><span class="num">55张照片</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="notes">
+                        <ul>
+                            <li class="first">
+                                <div class="title">
+                                    <a href="https://www.douban.com/note/710363302/">镰仓拾光 | 假如青春有一片海</a>
+                                </div>
+                                <div class="author">
+                                  梳打的日记
+                                </div>
+                                <p>像是从十几岁的青春里随手截出的一个下午，随意闲坐的海边，漫无边际的瞎扯，时光...</p>
+                            </li>
+                            <li><a href="https://www.douban.com/note/711984553/">多少中国家庭的小秘密，埋在拆迁居民楼里</a></li>
+                            <li><a href="https://www.douban.com/note/711118036/">肯德基桶伤心俱乐部</a></li>
+                            <li><a href="https://www.douban.com/note/710841033/">【艺术短评】爱德华·蒙克的另一面：分裂与复调性</a></li>
+                            <li><a href="https://www.douban.com/note/705265690/">平成的动画电影 PART I 配方</a></li>
+                            <li><a href="https://www.douban.com/note/710809728/">“古法”晾衣</a></li>
+                            <li><a href="https://www.douban.com/note/711982211/">“爱死机”剧透级线上艺术展</a></li>
+                            <li><a href="https://www.douban.com/note/711037012/">南极日记——适应船上生活</a></li>
+                            <li><a href="https://www.douban.com/note/708245434/">“抱歉打扰了，服务员。我碗里有只苍蝇。”</a></li>
+                            <li><a href="https://www.douban.com/note/707455112/">在Santiago找到我的城市</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="anony-time" class="section">
+        <div class="wrapper">
+            <div class="sidenav">
+                <h2 class="section-title">
+                    <a href="#">豆瓣时间</a>
+                </h2>
+            </div>
+            <div class="side"></div>
+            <div class="main">
+                <h2>热门专栏&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·<span class="p1">&nbsp;(<a href="#" target="_self">更多</a>)</span></h2>
+                <ul class="time-list">
+                    <li>
+                        <a href="#" class="cover activity new"><img src="https://img1.doubanio.com/dae/niffler/niffler/images/af54b920-4718-11e9-b6b0-0242ac11000a.png" alt="写手好字 · 实用行楷30日课"></a>
+                        <a href="#" class="title">写手好字 · 实用行楷30日课</a>
+                        <span class="type">成长营</span>
+                    </li>
+                    <li>
+                        <a href="#" class="cover activity new"><img src="https://img3.doubanio.com/dae/niffler/niffler/images/c8365fba-5515-11e9-8870-0242ac110025.jpg" alt="解说式音乐会——30天听懂古典音乐"></a>
+                        <a href="#" class="title">解说式音乐会——30天听懂古典音乐</a>
+                        <span class="type">成长营</span>
+                    </li>
+                    <li>
+                        <a href="#" class="cover activity new"><img src="https://img3.doubanio.com/dae/niffler/niffler/images/d188afb4-4f93-11e9-8730-0242ac11000e.jpg" alt="随手出大片——手机摄影成长营"></a>
+                        <a href="#" class="title">随手出大片——手机摄影成长营</a>
+                        <span class="type">成长营</span>
+                    </li>
+                    <li>
+                        <a href="#" class="cover activity new"><img src="https://img3.doubanio.com/dae/niffler/niffler/images/a971d254-4ea2-11e9-a73d-0242ac11005f.jpg" alt="从零开始写隶书——隶书技法成长营（第三期）"></a>
+                        <a href="#" class="title">从零开始写隶书——隶书技法成长营（第三期）</a>
+                        <span class="type">成长营</span>
+                    </li>
+                    <li>
+                        <a href="#" class="cover activity new"><img src="https://img1.doubanio.com/dae/niffler/niffler/images/9bb615f8-3f3e-11e9-9727-0242ac110018.jpg" alt="超级IP的诞生——泛娱乐化时代爆款逻辑"></a>
+                        <a href="#" class="title">超级IP的诞生——泛娱乐化时代爆款逻辑</a>
+                        <span class="type">成长营</span>
+                    </li>
+                    <li>
+                        <a href="#" class="cover activity new"><img src="https://img3.doubanio.com/dae/niffler/niffler/images/c3a9890a-3421-11e9-b55c-0242ac110005.jpg" alt="去！把巫师叫醒——奇幻文学“四大名著”入门"></a>
+                        <a href="#" class="title">去！把巫师叫醒——奇幻文学“四大名著”入门</a>
+                        <span class="type">成长营</span>
+                    </li>
+                    <li>
+                        <a href="#" class="cover activity new"><img src="https://img1.doubanio.com/dae/niffler/niffler/images/9807a714-39ad-11e9-861c-0242ac11001c.jpg" alt="无处不在的偏差——社会心理学揭示的思维盲点"></a>
+                        <a href="#" class="title">无处不在的偏差——社会心理学揭示的思维盲点</a>
+                        <span class="type">成长营</span>
+                    </li>
+                    <li>
+                        <a href="#" class="cover activity new"><img src="https://img1.doubanio.com/dae/niffler/niffler/images/d9596076-2eb4-11e9-be94-0242ac110029.jpg" alt="如来的掌心——理解佛学的16把钥匙"></a>
+                        <a href="#" class="title">如来的掌心——理解佛学的16把钥匙</a>
+                        <span class="type">成长营</span>
+                    </li>
+                    <li>
+                        <a href="#" class="cover activity new"><img src="https://img1.doubanio.com/dae/niffler/niffler/images/9becc2ac-1ec7-11e9-b354-0242ac11001b.jpg" alt="深化你讲故事的能力——写作提高营"></a>
+                        <a href="#" class="title">深化你讲故事的能力——写作提高营</a>
+                        <span class="type">成长营</span>
+                    </li>
+                    <li>
+                        <a href="#" class="cover activity new"><img src="https://img1.doubanio.com/dae/niffler/niffler/images/f9f6b416-18c3-11e9-bdb8-0242ac110008.jpg" alt="这样认识一座城——城市进化的10种姿态"></a>
+                        <a href="#" class="title">这样认识一座城——城市进化的10种姿态</a>
+                        <span class="type">成长营</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="weui-footer">
+        <p class="weui-footer__links">
+          <a href="javascript:void(0);" class="weui-footer__link">底部链接</a>
+          <a href="javascript:void(0);" class="weui-footer__link">底部链接</a>
+        </p>
+        <p class="weui-footer__text">Copyright © 2008-2016 weui.io</p>
+    </div>
+    <div class="back-to-top">
+        <div class="arrow"></div>
+    </div>
+    <script>
+    $(function(){
+        $(window).scroll(function(){
+            if($(this).scrollTop()>300){
+                $('.back-to-top').fadeIn();
+            }else{
+                $('.back-to-top').fadeOut();
+            }
+        })
+        $('.back-to-top').click(function(){
+            $('html,body').animate({scrollTop:0},200);
+        })
+    })   
+    </script>
+</body>
+</html>

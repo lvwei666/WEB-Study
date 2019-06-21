@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 200px;
+        height: 200px;
+        border: 10px solid green;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    #box2{
+        margin-top: 30px;
+    }
+    </style>
+</head>
+<body>
+    <div draggable="true" class="box" id="box1"> 
+        <p>辣条</p>
+    </div>
+    <!-- <a href="">蜗牛：“拖我”</a> -->
+    <div class="box" id="box2" draggable="true">
+        <img src="http://ppsm0t3x8.bkt.clouddn.com/wonniu.jpg" alt="">
+    </div>
+    <script>
+    const box1 = document.getElementById('box1');
+    const box2 = document.getElementById('box2');
+    const boxs = document.querySelectorAll('.box');
+    let srcBox = null;
+    for(let i = 0,len = boxs.length; i < len; i ++){
+        let box = boxs[i];
+        box.addEventListener('dragstart',function(event){
+            srcBox = this;
+            event.dataTransfer.setData('text/html',this.innerHTML)
+        })
+        box.addEventListener('dragover',function(event){
+            event.preventDefault();
+        })
+        box.addEventListener('drop',function(event){
+            const dataTrans = event.dataTransfer.getData('text/html');
+            srcBox.innerHTML = this.innerHTML;
+            this.innerHTML = dataTrans;
+        })
+    }
+
+    // 源对象
+    // box1.addEventListener('dragstart',()=>console.log('dragstart'))
+    // box1.addEventListener('drag',()=>console.log('drag'))
+    // box1.addEventListener('dragend',()=>console.log('dragend'))
+    // // 目标对象
+    // box2.addEventListener('dragenter',function(){
+    //     console.log('dragenter');
+    // })
+    // box2.addEventListener('dragover',function(event){
+    //     event.preventDefault();
+    //     console.log('dragover');
+    // })
+    // box2.addEventListener('dragleave',function(){
+    //     console.log('dragleave');
+    // })
+    // box2.addEventListener('drop',function(){
+    //     console.log('drop');
+    // })
+    </script>
+</body>
+</html>

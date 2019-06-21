@@ -1,0 +1,17 @@
+<view class="container">
+  <view class='title'>
+    <text>热歌榜</text>
+  </view>
+  <view class='songList'>
+    <view class='songlist'>
+      <block wx:for="{{songLists}}" wx:key="index">
+        <view class='item' data-id="{{item.id}}" bindtap='toPlayAudio'>
+          <view class='index'>{{index + 1}}</view>
+          <view class='rightView'>
+            <view class='songTitle'>{{item.name}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

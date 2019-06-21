@@ -1,0 +1,22 @@
+.prev.button,
+.next.button {
+  position: absolute;
+  padding: 0;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-align: center;
+}
+.prev.button.bottom,
+.next.button.bottom {
+  top: auto;
+  bottom: 0;
+  margin-bottom: 24px;
+}
+.prev.button {
+  left: 24px;
+}
+.next.button {
+  right: 24px;
+}

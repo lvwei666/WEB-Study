@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h3>姓名</h3>
+    <p>{{name}}</p>
+    <h3>年龄</h3>
+    <p>{{age}}</p>
+    <div class="msg">
+      {{msg}}
+    </div>
+  </div>
+  <script>
+  // compile 模板
+  // data 喂 数据驱动 ， 
+  // mvvm 响应式, 自动刷新
+  // 订阅发布者模式 收集订阅者（data {{}}）， 
+  // data 发布者
+  class Observer {
+    constructor () {
+      this.subNodes = [];
+    }
+    addSubNode(node) {
+      this.subNodes.push(node);
+    }
+    update(newVal) {
+      this.subNodes.forEach(node => {
+        node.innerHTML = newVal;
+      })
+    }
+  }
+
+  class Vue {
+    constructor(opt) {
+      console.log('dfdf');
+      this.opt = opt;
+      this.observe(opt.data);
+      this.root = document.querySelector(opt.el);
+      this.compile(this.root);
+    }
+    observe (data) {
+      Object.keys(data).forEach(key => {
+        let obv = new Observer();
+        // 新值， 和旧值 
+        data["_" + key] = data[key]
+        // 定义属性, 
+        Object.defineProperty(data, key, {
+          get () {
+            Observer.target && obv.addSubNode(Observer.target);
+            return data['_' + key]
+          },
+          set (newVal) {
+            obv.update(newVal);
+            data['_' + key] = newVal;
+          }
+        })
+      })
+    }
+    compile(node) {
+      [].forEach.call(node.childNodes, child => {
+        console.log(node.childNodes);
+        if (!child.firstElement && /\{\{(.*)\}\}/.test(child.innerHTML)) {
+          let key = RegExp.$1.trim();
+          child.innerHTML = child.innerHTML.replace(new RegExp('\\{\\{\\s*' + key + '\\s*\\}\\}', 'gm'), this.opt.data[key])
+          // 发生订阅关系的时候
+
+          Observer.target = child;
+          this.opt.data[key]
+          Observer.target = null;
+        } else if (child.firstElement){
+          //文本结点 
+          this.compile(child);
+        }
+      })
+      // {{}} 正则 
+    }
+  }  
+  document.addEventListener('DOMContentLoaded', function() {
+    let opt = {
+      el: '#app',
+      data: {
+        name: '检索中...',
+        age: 30,
+        msg: 'vue 高手， 月薪5万'
+      }
+    }
+    // vm 实例 viewModel
+    window.vm = new Vue(opt);
+    setTimeout(() => {
+      opt.data.name = '老王'
+    }, 2000)
+  })
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<view class="container">
+    <view class="header">
+        <view class="title">
+            <text>兴趣热榜</text>
+        </view>
+        <view class="more">
+            <text>查看更多</text>
+        </view>
+        <view class="content">
+            <view class="con-left">
+                <view class="con-item">
+                    <view class="topic">
+                        <image class="img" src="../../images/winter.jpg"></image>
+                    </view>
+                    <view class="hobby">
+                        <view class="hobby-title">#这个冬天你胖了吗#</view>
+                        <view class="hobby-active">活跃度：60378</view>
+                    </view>
+                </view>
+                <view class="con-item">
+                    <view class="topic">
+                        <image class="img" src="../../images/movie.jpg"></image>
+                    </view>
+                    <view class="hobby">
+                        <view class="hobby-title">#看完复联4的我#</view>
+                        <view class="hobby-active">活跃度：11156</view>
+                    </view>
+                </view>
+            </view>
+            <view class="con-right">
+                <view class="con-item">
+                    <view class="topic">
+                        <image class="img" src="../../images/hair.jpg"></image>
+                    </view>
+                    <view class="hobby">
+                        <view class="hobby-title">#发量大赛#</view>
+                        <view class="hobby-active">活跃度：9717</view>
+                    </view>
+                </view>
+                <view class="con-item">
+                    <view class="topic">
+                        <image class="img" src="../../images/head.jpg"></image>
+                    </view>
+                    <view class="hobby">
+                        <view class="hobby-title">#你的头像，是不是也一直被爸妈吐槽#</view>
+                        <view class="hobby-active">活跃度：29038</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="body">
+      <block wx:for="{{every}}" wx:key="index">
+        <speak createTime="{{item.createTime}}" content="{{item.content}}" images="{{item.images}}"></speak>
+      </block>
+    </view>
+    <view class='footer'>
+      <text>-------没有更多了-------</text>
+    </view>
+    <view class="add" bindtap='share'>
+        <image class="add-btn" src="../../images/add.png"></image>
+    </view>
+</view>

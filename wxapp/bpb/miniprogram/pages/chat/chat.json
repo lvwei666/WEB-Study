@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "speak": "../../components/speak/speak"
+  },
+  "enablePullDownRefresh": true
+}

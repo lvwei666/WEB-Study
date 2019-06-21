@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    函数的名字  函数的参数
+    给定一个上下文的时候开始调用
+    */
+  //  reduce cb === (pre, next) => pre + next
+    function call(key, ...args) {
+      // t call 调用之后返回的函数
+      return (context) => {
+        return context[key](...args)
+        // return
+      }
+    }  
+    const arr = [1,2,3,4];
+    // arr.forEach((item) => {console.log(item)});
+    // console.log(arr.map(x => x * 2));
+    // 0 指定了 pre 的默认值
+    // 0 0 + 1 + 2 + 3 + 4 = 10
+    // 10 10 + 1 + 2 + 3 + 4 = 20
+    const sum = arr.reduce((pre, next) => pre + next, 10);
+    console.log('sum', sum);
+
+    // const t = call('forEach', (item) => {console.log(item)});
+    // t([1,2,3,4,5,6]) 
+
+    // const t1 = call('map', x => x * 2)
+    // console.log(t1([1,2,3,4]));
+
+    const t2 = call('reduce', (pre, next) => pre + next, 10)
+    console.log('t2', t2(arr));
+  </script>
+</body>
+</html>

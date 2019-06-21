@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    input[type="file"]{
+        display: none;
+    }
+    img{
+        width: 100%;
+    }
+    .list-group{
+        border: 1px dashed #ddd;
+        height: 200px;
+        text-align: center;
+        color: green;
+    }
+    </style>
+</head>
+<body>
+    <!-- MIME 类型 -->
+    <!-- text/html -->
+    <div class="container">
+        <ul class="list-group">
+            拖放文件到这里
+        </ul>
+        <div class="row" id="imgContainer">
+            <!-- <div class="col-md-3"></div> -->
+        </div>
+    </div>
+    <form action="" name="upload">
+        <input type="file" name="fileSelect" accept="image/*" multiple>
+        <input type="button" value="上传文件" class="btn-primary" name="fileSelectBtn">
+    </form>
+    <script>
+    const uploadForm = document.forms['upload']['fileSelect'];
+    const fileSelectBtn = document.forms['upload']['fileSelectBtn'];
+    const listGroup = document.querySelector('.list-group');
+    function displayFileInfo(event){
+        event.preventDefault();
+        const files = event.target.files || event.dataTransfer.files;
+        for(let file of files){
+            const liNode = document.createElement('li');
+            // liNode.className = ''
+            liNode.classList.add('list-group-item');
+            const content = document.createTextNode(`
+            ${file.name}
+            ${file.type}
+            ${(file.size / 1024 / 1024).toFixed(2)} Mb
+            ${file.lastModifiedDate.toLocaleDateString()}
+            `);
+            liNode.appendChild(content);
+            listGroup.appendChild(liNode);
+
+            // 图片
+            const colDiv = document.createElement('div');
+            colDiv.classList.add('col-md-3');
+            const img = document.createElement('img');
+            // 暂时的在内存里面的 URL
+            // 生命周期 和 创建它的窗口的 document 绑定
+            const url = window.URL.createObjectURL(file);
+            img.src = url;
+            colDiv.appendChild(img);
+            document.querySelector('.row').appendChild(colDiv);
+        }
+    }
+    uploadForm.addEventListener('change',displayFileInfo);
+    fileSelectBtn.addEventListener('click',function(){
+        uploadForm.click();
+    })
+    listGroup.addEventListener('dragover',function(event){
+        event.preventDefault();
+    })
+    listGroup.addEventListener('drop',displayFileInfo);
+    </script>
+</body>
+</html>

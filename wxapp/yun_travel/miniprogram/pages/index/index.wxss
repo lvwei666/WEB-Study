@@ -1,0 +1,18 @@
+.homepage{
+    position: relative;
+    height: 100%;
+    background: url('http://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/5.png?sign=5778ce970ee8cada94b1a6d9e044754a&t=1542456623');
+    background-size: 100% 100%;
+}
+.homepage > button{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100rpx;
+    margin: auto;
+    /* 按钮样式 */
+    width: 40%;
+    color: white;
+    background-color: #ff644e;
+    border-radius: 50rpx;
+}

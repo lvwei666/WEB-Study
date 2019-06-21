@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>boder属性使用</title>
+    <style>
+        .box{
+            width: 150px;height: 150px;
+            /* 超出区域隐藏，只显示一个圆（IE7,IE8） */
+            overflow: hidden;
+        }
+        .dotted{
+            width: 100%;height: 100%;
+            border: 149px dotted #cd0000;
+        }
+        .San{
+            width: 120px;height: 20px;
+            border-top: 60px double;
+            border-bottom: 20px solid;
+        }
+        .color{
+            border: 10px solid;
+            color: pink;
+        }
+        .add{
+            display: inline-block;
+            width: 100px;height: 100px;
+            color: #ccc;
+            border: 1px solid;
+            position: relative;
+        }
+        .add:before,.add:after{
+            content: '';
+            width: 50px;                        
+            border-color: #ccc;
+            position: absolute;
+            top: 50%;left: 50%;
+            
+        }
+        .add:before{ 
+            transform: translate(-50%,-50%);
+            border-top: 10px solid;
+        }
+        .add:after{
+            display: inline-block;
+            height: 50px;
+            border-left: 10px solid; 
+            transform: translate(-8%,-50%);  
+        }
+        .add:hover{
+            color: #0066cc;
+        }
+        .triangle{
+            display: block;
+            width: 0px;height: 0px;
+            border: 100px solid;
+            border-color: red red transparent transparent;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="dotted"></div>
+    </div>
+    <div class="San"></div>
+    <div class="color">boder-color默认颜色就是color</div>
+    <a href="javascript" class="add"></a>
+    <div class="triangle"></div>
+    
+</body>
+</html>

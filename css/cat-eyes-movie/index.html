@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+    <link href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css" rel="stylesheet">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="nav">
+        <i class="arrow-left"></i>
+        <span>影片详情</span>
+    </header>
+    <div class="page">
+        <section class="movie-header">
+            <div class="movie">
+                <div class="movie-background"></div>
+                <div class="movie-filter"></div>
+                <div class="movie-container">
+                    <div class="movie-cover">
+                        <a href="#" class="link">
+                            <img src="./images/header-bg.jpg" alt="" id="moviePic" class="img">
+                        </a>
+                    </div>
+                    <div class="movie-content">
+                        <div class="movie-name">
+                            <span></span>
+                        </div>
+                        <div class="movie-ename">
+                            <span></span>
+                        </div>
+                        <div class="movie-score">
+                            <div class="released-score">
+                                <div class="rating" id="rating">
+                                    <!-- star -->
+                                    <span class="rating-score"></span>
+                                </div>
+                                <div class="score-num">
+                                    (<span></span>)人评分
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-detail">
+                            <p class="movie-type"></p>
+                            <p class="address-time">
+                                <span class="address">zg</span>
+                                /
+                                <span class="time">111</span>
+                                分钟
+                            </p>
+                            <p class="date"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="operating flex">
+                    <div class="movie-watch flex1">
+                        <img src="./images/heart.png" alt="">
+                        <span>想看</span>
+                    </div>
+                    <div class="movie-mark flex1">
+                        <img src="./images/star2.png" alt="">
+                        <span>评分</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section2 -->
+        <section class="section-seperate section-expander">
+            <div class="text-expander" id="text-expander">
+                <div class="text-expander_content close">
+                    <p></p>
+                </div>
+                <div class="text-expander_button">
+                    <i class="icon-chevron_down"></i>
+                </div>
+            </div>
+        </section>
+        <!-- section3 -->
+        <section class="section-seperate">
+            <p class="action-list section-til">演职人员</p>
+            <ul class="movie-celebrities">
+                <!-- <li>
+                    <a href="#" class="link">
+                        <div class="movie-celebrities_pic">
+                            <img src="http://p1.meituan.net/moviemachine/6e06b1eee9a74c9573fdb8150fb8561271624.jpg@130w_180h.webp" alt="">
+                        </div>
+                        <span class="movie-celebrities_nick">123</span>
+                        <span class="movie-celebrities_roles">666</span>
+                    </a>
+                </li> -->
+            </ul>
+        </section>
+        <!-- section4 -->
+        <section class="section-seperate section-expander movie-booking">
+            <p class="section-til">票房</p>
+            <div class="weui-flex">
+                <div class="weui-flex__item"><div class="placeholder"><span></span><p>昨日票房排行</p></div></div>
+                <div class="weui-flex__item"><div class="placeholder"><span class="s2"></span><p>首周票房(万)</p></div></div>
+                <div class="weui-flex__item"><div class="placeholder"><span class="s3"></span><p>累计票房(万)</p></div></div>
+            </div>
+        </section>
+        <!-- section5 -->
+        <section class="movie-photo section-seperate">
+            <p class="action-list section-til">视频和剧照</p>
+            <ul class="movie-photo_lists">
+ 
+            </ul>
+        </section>
+        <!-- section6 -->
+        <section class="section-seperate section-expander">
+            <p class="section-til pos_r">讨论
+                <span class="join-commit">参与讨论</span>
+            </p>
+            <ul class="movie-commit">
+                <li class="commit-item">
+                    <div class="commit-item_sort">
+                        <span>全部</span>
+                        <span class="commit-item_num"></span>
+                    </div>
+                </li>
+                <li class="commit-item">
+                    <div class="commit-item_sort">
+                        <span>好评</span>
+                        <span class="commit-item_num" id="good"></span>
+                    </div>
+                </li>
+                <li class="commit-item">
+                    <div class="commit-item_sort">
+                        <span>差评</span>
+                        <span class="commit-item_num" id="bad"></span>
+                    </div>
+                </li>
+                <li class="commit-item">
+                    <div class="commit-item_sort">
+                        <span>点映</span>
+                        <span class="commit-item_num" id="dy"></span>
+                    </div>
+                </li>
+                <li class="commit-item">
+                    <div class="commit-item_sort">
+                        <span>购票</span>
+                        <span class="commit-item_num" id="buy"></span>
+                    </div>
+                </li>
+                <li class="commit-item">
+                    <div class="commit-item_sort">
+                        <span>认证作者</span>
+                        <span class="commit-item_num" id="author"></span>
+                    </div>
+                </li>
+                <li class="commit-item">
+                    <div class="commit-item_sort">
+                        <span>同城</span>
+                        <span class="commit-item_num" id="tc"></span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- section7 -->
+        <section class="section-seperate section-expander">
+            <p class="section-til">精选</p>
+            <ul class="chosen-comment" id="chosen-comment">
+                <!-- <li class="chosen-comment__item">
+                    <div class="item-avatal">
+                      <img src="https://ps.ssl.qhmsg.com/bdr/656__/t010eed8a6ad9ee124f.jpg" alt="">
+                    </div>
+                    <div class="item-detail">
+                        <div class="item-detail__hd">
+                            <div>
+                                <span class="nick-name">dqweqwe</span>
+                                <span class="lever">
+                                    <img src="" alt="">
+                                </span>
+                            </div>
+                            <p class="item-score__desc">给这部电影打了<span></span>分</p>
+                        </div>
+                        <div class="item-detail__content">
+                            <p></p>
+                        </div>
+                        <div class="item-detail__footer">
+                            <span class="item-detail__time">03-22</span>
+                            <div class="pull-right">
+                                <a href="#" class="link comment-like">
+                                    <i class="icon icon-approve"></i>
+                                    <span>32423</span>
+                                </a>
+                                <a href="#" class="link comment-reply">
+                                    <i class="icon icon-comment"></i>
+                                    <span>2121</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li> -->
+            </ul>
+        </section>
+        <!-- toast -->
+        <div id="toast">
+            <div class="weui-mask_transparent"></div>
+            <div class="weui-toast">
+              <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+              <p class="weui-toast__content">已标记为想看</p>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        $.ajax({
+            url:'https://www.easy-mock.com/mock/5ca466f013e4cf68f04a430a/lvmengimgMovie-demo',
+            type:'get',
+            success:function(res){
+                console.log(res);
+                // $('#moviePic').attr('src',res.data.moviePic);
+                $('.movie-content .movie-name span').html(res.data.name);
+                $('.movie-content .movie-ename span').html(res.data.nameEnglish);
+                star(res.data.star);
+                $('.rating-score').html(res.data.grade);
+                $('.score-num span').html(res.data.people);
+                $('.movie-type').html(res.data.type);
+                $('.address-time .address').html(res.data.where);
+                $('.address-time .time').html(res.data.time);
+                $('.movie-detail .date').html(res.data.date);
+                $('.text-expander_content p').html(res.data.desc);
+                celebrity(res.data.person);
+                $('.movie-booking .weui-flex .weui-flex__item .placeholder span').html(res.data.booking.ranking);
+                $('.movie-booking .weui-flex .weui-flex__item .placeholder .s2').html(res.data.booking.bookingWeek);
+                $('.movie-booking .weui-flex .weui-flex__item .placeholder .s3').html(res.data.booking.bookingTotal);
+                photo(res.data.pictures);
+                num(res.data.commentNum);
+                jx(res.data.comment);
+            }
+        })
+        function star(e){
+            let num = Math.floor(e);
+            if(e>num){
+                $('#rating').prepend('<img class="img" src="./images/star-h.png">')
+            }
+            for(let i = 0;i < num;i++){
+                $('#rating').prepend('<img class="img" src="./images/star.png">')
+            }
+        }
+        $('.movie-watch').click(function(){
+            if($(this).hasClass('active')){
+                $('.movie-watch').removeClass('active');
+                $('.movie-watch img').attr('src','./images/heart.png');
+                $('#toast .weui-toast__content').html('已取消想看');
+            }else{
+                $('.movie-watch').addClass('active');
+                $('.movie-watch img').attr('src','./images/heart1.png');
+                $('#toast .weui-toast__content').html('已标记为想看');
+            }
+            $('#toast').css('display','block');
+            setTimeout(()=>{
+                $('#toast').css('display','none');
+            },1500)
+        })
+        // 收放详情
+        $('#text-expander').on('click',function(){
+            if($('.text-expander_content').hasClass('close')){
+                $('.text-expander_content').removeClass('close');
+                $('.icon-chevron_down').addClass('up');
+            }else{
+                $('.text-expander_content').addClass('close');
+                $('.icon-chevron_down').removeClass('up');
+            }
+        })
+        // 演员表
+        function celebrity(arr){
+            for(let n of arr){
+                $('.movie-celebrities').append(`<li>
+                    <a href="#" class="link">
+                        <div class="movie-celebrities_pic">
+                            <img src="${n.avatal}" alt="">
+                        </div>
+                        <span class="movie-celebrities_nick">${n.name}</span>
+                        <span class="movie-celebrities_roles">${n.sort}</span>
+                    </a>
+                </li>`)
+            }
+        }
+        // 剧照
+        function photo(array){
+            for(let m of array){
+                $('.movie-photo_lists').append(`<li class="stage-img-container">
+                    <a href="#" class="link">
+                        <div class="movie-celebrities_pic">
+                            <img src="${m}" alt="">
+                        </div>
+                    </a>
+                </li>`);
+            }
+        }
+        // 讨论
+        function num(n){
+            $('#good').html(n.good);
+            $('#bad').html(n.bad);
+            $('#dy').html(n.dy);
+            $('#buy').html(n.bought);
+            $('#author').html(n.author);
+            $('#tc').html(n.sameCity);
+        }
+        // 精选
+        function jx(arr){
+            for(let n of arr){
+                $('.chosen-comment').append(`
+                <li class="chosen-comment__item">
+                    <div class="item-avatal">
+                      <img src="${n.avatal}" alt="">
+                    </div>
+                    <div class="item-detail">
+                        <div class="item-detail__hd">
+                            <div>
+                                <span class="nick-name">${n.nickName}</span>
+                                <span class="lever">
+                                    <img src="${n.lever}" alt="">
+                                </span>
+                            </div>
+                            <p class="item-score__desc">给这部电影打了<span>${n.grade}</span>分</p>
+                        </div>
+                        <div class="item-detail__content">
+                            <p>${n.detail}</p>
+                        </div>
+                        <div class="item-detail__footer">
+                            <span class="item-detail__time">03-22</span>
+                            <div class="pull-right">
+                                <a href="#" class="link comment-like">
+                                    <i class="icon icon-approve"></i>
+                                    <span>${n.like}</span>
+                                </a>
+                                <a href="#" class="link comment-reply">
+                                    <i class="icon icon-comment"></i>
+                                    <span>${n.reply}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                `);
+            }
+        }
+    })()
+    </script>
+</body>
+</html>

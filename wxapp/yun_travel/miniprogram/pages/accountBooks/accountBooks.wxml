@@ -1,0 +1,14 @@
+<view class="container">
+    <view class="list" bindtap="switchList"></view>
+    <block wx:if="{{!isList}}">
+        <image src="http://7a68-zhh-cloud-b7a1a9-1257892988.tcb.qcloud.la/列表.svg?sign=b2bb8634bff3d0901db99aea167a73dd&t=1540886041"/>
+        <swiper previous-margin="80rpx" next-margin="80rpx">
+            <block wx:for="{{accounts}}" wx:key="{{index}}">
+                <swiper-item>
+                    <accountCover account="{{item}}">
+                    </accountCover>
+                </swiper-item>
+            </block>
+        </swiper>
+    </block>
+</view>

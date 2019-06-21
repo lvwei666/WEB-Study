@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="lists"></div>
+    <!-- html entity -->
+    <!-- 空格 -->
+    &nbsp;
+    <!-- < -->
+    &lt;
+    <!-- > -->
+    &gt;
+    <script>
+        // 拓展 字符串、对象
+        Array.prototype.double = function() {
+            console.log(this); //[1,2,3]
+            // 谁调用 double 谁就是this
+            return this.map(ele => ele * 2);
+        }
+        let arr = [1,2,3];
+        let newArr = arr.double();
+        // 返回 原数组 扩大两倍 
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject('err')
+            }, 1500)
+        }) 
+        promise.then(res => {
+            console.log(res)
+        }).catch(err => {
+            // 上报
+            console.log(err);
+        }) 
+        try {
+            const lists = document.getElementById('list');
+            // lists === null
+            lists.style.width = '10px';
+        }catch (err) {
+            console.log(err);
+        }
+
+        console.log('正确的代码');
+    </script>
+</body>
+</html>

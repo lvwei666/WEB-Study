@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>浏览器对象</title>  
+  <meta http-equiv="Content-Type" content="text/html; charset=gkb"/>   
+ </head>
+ <body>
+  <!--先编写好网页布局-->
+ <h1>操作成功！<br></h1>
+ <span id="scecond">5</span><span>秒返回到主页</span><a  href="javascript:goBack()">返回</a>
+  <script type="text/javascript">  
+ var e=5;
+//获取显示秒数的元素，通过定时器来更改秒数。
+   //使用计时器
+var time=setInterval(function (){
+         document.getElementById("scecond").innerHTML=e;//获取元素   
+         e--;
+// if(e==0){
+//         window.location.href="https://www.imooc.com/";
+//         clearInterval(time); 
+//  }
+ },1000);
+ //通过window的location和history对象来控制网页的跳转。
+//  function goBack(){
+//        window.location.forward();
+//    }
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+*{margin: 0;padding: 0;}
+a:link {
+    color: #a2a2a2;
+}
+a:vistied{
+    color: #a2a2a2;
+}
+a:hover {
+    color: #509ff1;
+}
+a:active {
+    color: #509ff1;
+}
+.zfbui-tabbar{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 500;
+    background-color: #ffffff;
+    border-top: 1px solid #dddddd;
+}
+.zfbui-tabbae_item{
+    flex: 1;
+    text-align: center;
+    padding: 8.5px 6px 6px;
+    font-size: 0;
+    color: #a2a2a2;
+    text-decoration: none;
+}
+.zfbui-tabbar_item>span{
+    display: inline-block;
+    position: relative;
+}
+.zfbui-tabbar_icon{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    overflow: hidden;
+    margin-bottom: 3.5em;
+}
+.zfbui-badge{
+    position: absolute;
+    top: -2px;
+    right: -13px;
+    min-width: 8px;
+    display: inline-block;
+    padding: 0.15em 0.4em;
+    font-size: 12px;
+    line-height: 12px;
+    background-color: #f43539;
+    border-radius: 18px;
+    color: white;
+}
+.zfbui-tabbar_label{
+    font-size: 10px;
+    text-align: center;
+    line-height: 10;
+}

@@ -1,0 +1,17 @@
+<view class="cards">
+    <view class="card" wx:for="{{entities}}" wx:key="id">
+        <video src="{{item.video}}" id="{{item.id}}" poster="{{item.image}}" duration="{{item.duration_raw}}" objectFit="cover" hidden="{{currentVid !== item.id}}"></video>
+        <image data-vid="{{item.id}}" src="{{item.image}}" mode="aspectFill" hidden="{{currentVid == item.id}}" bindtap="handleVideoPlay">
+            <view class="label">{{item.duration}}</view>
+        </image>
+        <navigator url="/pages/show/index?id={{item.id}}">
+            <view class="content">
+                <view class="header border">
+                    {{ item.header }}
+                </view>
+                <view class="description">{{ item.description }}</view>
+                <view class="meta">{{ item.meta.price }}</view>
+            </view>
+        </navigator>
+    </view>
+</view>

@@ -1,0 +1,15 @@
+{
+  "name": "static-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fileUpload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "formidable": "^1.2.1"
+  }
+}

@@ -1,0 +1,126 @@
+<view class="container">
+    <view class="header">
+        <view class="left">
+            <open-data type="userAvatarUrl" class="left-ava"></open-data>
+        </view>
+        <view class="mid">
+            <view class="mid-top">
+                <open-data type="userNickName"></open-data>
+            </view>
+            <view class="mid-bottom">东华理工大学南昌广兰校区 软件学院</view>
+        </view>
+        <view class="right">
+            <view class="arrow"></view>
+        </view>
+    </view>
+    <view class="hd-footer">
+        <view class="ft-left">
+            <view class="num">120.00</view>
+            <view class="str">
+                <text>学期目标</text>
+            </view>
+        </view>
+        <view class="ft-mid">
+            <view class="num">{{num}}</view>
+            <view class="str">
+                <text>已跑里程</text>
+            </view>
+        </view>
+        <view class="ft-right">
+            <view class="num">0.00</view>
+            <view class="str">
+                <text>计入成绩</text>
+            </view>
+        </view>
+    </view>
+    <view class="body">
+        <view class="content">
+            <view class="item-1">
+                <view class="item">
+                    <view class="img">
+                        <image src="../../images/reward.png"></image>
+                    </view>
+                    <view class="desc">
+                        <text>跑步奖励</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="img">
+                        <image src="../../images/signIn.png"></image>
+                    </view>
+                    <view class="desc">
+                        <text>考勤签到</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="img">
+                        <image src="../../images/callTheRoll.png"></image>
+                    </view>
+                    <view class="desc">
+                        <text>课堂点名</text>
+                    </view>
+                </view>
+            </view>
+            <view class="item-2">
+                <view class="item">
+                    <view class="img">
+                        <image src="../../images/record.png"></image>
+                    </view>
+                    <view class="desc">
+                        <text>跑步记录</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="img">
+                        <image src="../../images/grade.png"></image>
+                    </view>
+                    <view class="desc">
+                        <text>我的成绩</text>
+                    </view>
+                </view>
+            </view>
+            <view class="item-3">
+                <view class="item">
+                    <view class="img">
+                        <image src="../../images/order.png"></image>
+                    </view>
+                    <view class="desc">
+                        <text>历史排名</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="img">
+                        <image src="../../images/schedule.png"></image>
+                    </view>
+                    <view class="desc">
+                        <text>我的课程</text>
+                    </view>
+                </view>
+            </view>
+            <view class="item-4">
+                <view class="item">
+                    <view class="img">
+                        <image src="../../images/sport.png"></image>
+                    </view>
+                    <view class="desc">
+                        <text>运动校园</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="img">
+                        <image src="../../images/news.png"></image>
+                    </view>
+                    <view class="desc">
+                        <text>校园公告</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="footer">
+        <van-cell-group>
+            <van-cell title="联系客服" icon="setting-o" is-link url="" link-type="navigateTo"/>
+            <van-cell title="设置" icon="service-o" is-link border="true" url="" link-type="navigateTo"/>
+        </van-cell-group>
+    </view>
+</view>

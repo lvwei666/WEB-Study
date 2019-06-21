@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 父类
+    function Animal(age){
+        console.log(arguments,'+++');
+        this.species = '动物';
+        this.age = age;
+    }    
+    function Cat(age,name,color){
+        console.log(arguments);
+        // Animal.apply(this,arguments);
+        Animal.call(this,...arguments);
+        this.name = name;
+        this.color = color;
+    }
+    var cat1 = new Cat(3,'加菲猫','yellow');
+    console.log(cat1);
+    console.log(cat1.age);
+    </script>
+</body>
+</html>

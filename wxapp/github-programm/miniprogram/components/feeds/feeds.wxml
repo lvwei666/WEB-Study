@@ -1,0 +1,4 @@
+<block>
+    <feed item="{{item}}" wx:for="{{events}}" wx:key="{{index}}"></feed>
+    <loading type="spinner" color="#fff" class="loading" hidden="{{!loading}}" />
+</block>

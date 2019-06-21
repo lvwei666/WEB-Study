@@ -1,0 +1,147 @@
+/* miniprogram/pages/run/run.wxss */
+page{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, #3DAED9 30%,#57BFB6);
+    /* animation: colorful 5s linear both infinite; */
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.content{
+    height: 80vh;
+    position: relative;
+}
+.desc{
+    color: white;
+    position: absolute;
+    left: 35rpx;
+    top: 40rpx;
+}
+.anim{
+    width: 250rpx;
+    height: 250rpx;
+    background-color: white;
+    opacity: 0.3;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transform-origin: 0 0;
+    animation: expend 2.5s ease-in-out both infinite;
+}
+@keyframes expend{
+    0% {
+        opacity: 0;
+        transform: scale(1) translate(-50%,-50%);
+    }
+    40% {
+        opacity: 0.2;
+        transform: scale(1.7) translate(-50%,-50%);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.7) translate(-50%,-50%);
+    }
+}
+.start{
+    width: 250rpx;
+    height: 250rpx;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    line-height: 250rpx;
+    color: #7AD5C7;
+    transform-origin: 0 0;
+    animation: dd 2.5s linear both infinite;
+}
+@keyframes dd {
+    0%,8%,100%{
+        transform: translate(-50%,-50%) scale(1);
+    }
+    5% {
+        transform: translate(-50%,-50%) scale(.98);
+    }
+}
+.yp{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 250rpx;
+}
+.yp-desc{
+    width: 300rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 50rpx;
+    background-color: white;
+    text-align: center;
+    color: #7AD5C7;
+    margin: 35rpx;
+}
+.yp-desc .card{
+    width: 50rpx;
+    height: 50rpx;
+    padding: 25rpx 20rpx;
+    vertical-align: middle;
+}
+.address .aim{
+    width: 40rpx;
+    height: 40rpx;
+    padding: 0 35rpx;
+    vertical-align: middle;
+}
+.address .add{
+    color: white;
+    font-size: 16px;
+}
+.top{
+    position: absolute;
+    right: 0;
+    top: 11%;
+    text-align: right;
+}
+.top .top-aim{
+    background-color: #fff;
+    color: #7b8d8d;
+    padding: 20rpx;
+    margin-bottom: 20rpx;
+    display: inline-block;
+    border-radius: 40rpx 0 0 40rpx;
+}
+.top .top-grade{
+    background-color: #fff;
+    color: #7b8d8d;
+    padding: 20rpx;
+    border-radius: 40rpx 0 0 40rpx;
+}
+.music{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    border:1px solid #fff;
+    position: absolute;
+    right: 50rpx;
+    bottom: 18%;
+}
+.music .music-btn{
+    width: 100rpx;
+    height: 100rpx;
+}
+.content-news{
+  padding:20rpx 0 0 30rpx;
+}
+.item{
+  padding-bottom: 20rpx;
+}
+.item .title{
+  color: #aaa;
+}

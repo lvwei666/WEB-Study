@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box1" data-woniu="woniu"></div>
+    <script>
+    const box1 = document.getElementById('box1');
+    console.log(box1.dataset.woniu);
+    box1.dataset.woniu = 'WONIU666';
+    console.log(box1.getAttribute('data-woniu'));
+    box1.setAttribute('data-woniu','蜗牛');
+    console.log(box1.dataset.woniu);
+    </script>
+</body>
+</html>

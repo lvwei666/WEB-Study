@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>name</td>
+                <td>age</td>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+    </table>
+    <script>
+        const tbody=document.getElementById('tbody');
+        // const person={
+        //     name:'韩梅梅',
+        //     age:18
+        // }
+        const people=[
+        {
+            name:'韩梅梅',
+            age:18
+        },
+        {
+            name:'李雷',
+            age:18
+        }
+        ]
+        // <tr>
+        //         <td>韩梅梅</td>
+        //         <td>18</td>
+        //     </tr>
+        // const str=`         
+        // <tr>
+        //     <td>${person.name}</td>
+        //     <td>${person.age}</td>
+        // </tr>`;
+        //  tbody.innerHTML=str;
+            let str2=people.map(function(person){
+                return `
+             <tr>
+                 <td>${person.name}</td>
+                 <td>${person.age}</td>
+             </tr>
+            `;
+            });
+            str2=str2.join("");
+            tbody.innerHTML=str2;
+            
+        // join 数组拼接成了字符串
+        const arr=['ecut','ecit'];
+    </script>
+</body>
+
+</html>

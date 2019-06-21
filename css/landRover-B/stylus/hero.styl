@@ -1,0 +1,57 @@
+.ui.hero
+    background-color #f0f0f0
+    .item
+        overflow hidden
+        position relative
+        .content
+            display flex
+            align-items center
+            height 696px
+            .ui.container
+                position relative
+                z-index 2
+        .header
+            font-size 48px
+            font-family PingFangSC-Medium
+            font-weight 500
+            color rgba(0,0,0,1)
+            line-height 67px
+        .sub.header
+            font-size 18px
+            font-weight 500
+            color rgba(0,0,0,1)
+            line-height 25px
+            letter-spacing 3px
+        .description
+            font-size 18px
+            font-weight 500
+            color rgba(0,0,0,1)
+            line-height 25px
+        img 
+            position absolute
+            width 100%
+            top 0
+            bottom 0
+            margin auto
+            height 100%
+            object-fit cover
+@media only screen and (max-width: 767px)
+    .ui.hero
+        .item
+            display flex !important
+            flex-direction column
+            align-items center
+            text-align center
+            .content
+                height auto
+                color #000
+                align-items center
+                justify-content center
+                order 2
+            img 
+                position inherit 
+                height auto
+                order 1
+        .header
+            font-size 36px
+            letter-spacing 4px

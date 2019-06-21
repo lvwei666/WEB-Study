@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{  /*有性能问题*/
+        margin: 0;padding: 0;
+        -webkit-tab-highlight-color:rgba(0,0,0,0);
+    }
+    body{
+        background-color: #f6f6f6;
+        margin: 0;
+        color: #111111;
+        font-size: 12px;
+        font-family: serif;
+        position: relative;
+    }
+    a{
+        text-decoration: none;
+        color: green;
+    }
+    /* feed-item start */
+    .feed-item{
+        display: block;
+        padding: 25px 18px 25px 0;
+        margin-left: 18px;
+        position: relative;
+        color: #494949;
+    }
+    .feed-item:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        transform: scaleY(0.5);
+        transform-origin: 0 bottom;
+        background-color: #e3e3e3;
+    }
+    .feed-content .photos{
+        display: flex;
+        margin-bottom: 10px;
+    }
+    .feed-content .photos .main{
+        flex: 3.2;
+    }
+    .feed-content .photos .aside{
+        flex: 1;
+    }
+    /* feed-item end */
+    </style>
+</head>
+<body>
+    <a href="#" class="feed-item">
+        <div class="feed-content">
+            <div class="photos">
+                <div class="main" style="position: relative;background: url(./p2549554495.jpg
+                ) center center / cover no-repeat rgb(250, 250, 250)"></div>
+                <div class="aside">
+                    <div class="aside-pic">
+                        <div style="position:relative;
+                            background:url(./p2549554495.jpg) center center / cover no-repeat rgb(250,250,250);">
+                              <div style="padding-top:100%;"></div>                
+                        </div>
+                    </div>
+                    <div class="aside-pic">
+                            <div style="position:relative;
+                            background:url(./p2549554495.jpg) center center / cover no-repeat rgb(250,250,250);">
+                              <div style="padding-top:100%;"></div>
+                            </div>                
+                        <div class="more-pic"><span class="coount">141+</span></div>
+                    </div>
+                </div>
+            </div>
+            <h3>Joseph Catimbang</h3>
+            <p>https://www.pentasticarts.com 一位菲律宾裔美国插画家和概念艺术家。他的画作里往往只有黑白两色，凭</p>
+        </div>
+        <div class="author">by&nbsp;<span class="naem">青拾玖</span></div>
+    </a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<view class="map-box">
+  <map id='myMap' scale='{{scale}}' latitude='{{latitude}}' longitude='{{longitude}}' polyline="{{polyline}}" show-location markers='{{markers}}'></map>
+  <cover-view class="kg" hidden='{{hidden}}'>
+    <cover-view class="btn keep" bindtap="start" hidden='{{!switch}}'>
+      <cover-image src='../../images/bofang.png'></cover-image>
+    </cover-view>
+    <cover-view class="btn pause" bindtap="end" hidden='{{switch}}'>
+      <cover-image src='../../images/zanting.png'></cover-image>
+    </cover-view>
+    <cover-view class='btn stop' bindlongpress='stopReal' hidden='{{!switch}}'>
+      <cover-image src='../../images/jieshu.png'></cover-image>
+    </cover-view>
+  </cover-view>
+  <cover-view class="desc">
+    <cover-view class="desc-left">
+      {{sum}}
+      <cover-view class="desc-left-dis">公里</cover-view>
+    </cover-view>
+    <cover-view class="desc-center">
+      <cover-view class="center speed">配速</cover-view>
+      <cover-view class="center time">时长</cover-view>
+      <cover-view class="center calorie">卡路里</cover-view>
+    </cover-view>
+    <cover-view class="desc-right">
+      <cover-view class="right">0'00"</cover-view>
+      <cover-view class="right">{{time}}</cover-view>
+      <cover-view class="right">0</cover-view>
+    </cover-view>
+  </cover-view>
+  <cover-view class="actionSheet {{hover ? 'hover' : ''}}">
+    <cover-view class="opacity" bindtap="cancel"></cover-view>
+    <cover-view class="end-content">
+      <cover-view class="item item-1">是否结束此次运动？</cover-view>
+      <cover-view class="item item-2" bindtap='endReal'>结束运动</cover-view>
+      <cover-view class="item item-3" bindtap='cancel'>取消</cover-view>
+    </cover-view>
+  </cover-view>
+</view>

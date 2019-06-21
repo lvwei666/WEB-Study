@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const obj={
+        foo:'foo val',
+        bar:'bar val',
+        baz:'baz val'
+    }
+    // var aa=obj.foo,bb=obj.bar;
+    // const {baz,foo,aaa}=obj;    //解构对象，不存在的对象属性返回undefined
+
+    const {baz,foo:str1}=obj;   //解构赋值
+
+    const obj1={
+        p:['hello',{msg:'World'}]
+    }
+    const {p:[hello,world]}=obj1;
+
+    
+    </script>
+</body>
+</html>

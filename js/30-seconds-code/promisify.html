@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // promisify promise
+    // wx.request();
+
+    // promisify 
+    // 1: 把某一类特定的异步函数转换为 promise 的方式调用
+    // 2: const promiseReadfile = promisify(fs.readFile);
+    // promiseReadfile(path, {})
+    // .then(data => {})
+    // 3. const promiseStat = promisify(fs.stat);
+    // promiseStat('./aaa')
+    // .then()
+
+    // node
+    // fs.readFile(path, {}, (err, data) => {})
+    // fs.stat(path, (err, data) => {})
+    
+    const promisify = (func) => {
+      // promisify return 出去的函数
+      return (...args) => {
+        // promisify return 出去的函数  执行的结果
+        return new Promise((resolve, reject) => {
+          func(...args, (err, result) => {
+            if (err) reject(err)
+            else {
+              resolve(result);
+            }
+          })
+        })
+      }
+    }
+    // 函数式编程里面  高阶函数  参数是函数  返回值也是函数
+    // 一层包裹一层
+    // 少
+    // const a = function() {}
+    // 坚持看 ok
+    // const a = function() {}
+    // a()
+    const delay = promisify((time, cb) => {
+      setTimeout(cb, time);
+    })
+    delay(2000)
+    .then(res => {
+      console.log('hello promisify');
+    })
+  </script>
+</body>
+</html>

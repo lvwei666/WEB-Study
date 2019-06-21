@@ -1,0 +1,4 @@
+层叠顺序：
+
+层叠上下文background/border->负z-index->block块状水平盒子->float浮动盒子->inline/inline-block水平盒子->
+    z-index:auto或看成z-index:0/不依赖z-index的层叠上下文->正z-index

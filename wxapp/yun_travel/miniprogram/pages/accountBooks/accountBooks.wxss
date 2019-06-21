@@ -1,0 +1,19 @@
+/* miniprogram/pages/accountBooks/accountBooks.wxss */
+.container{
+    height: 100%;
+    background-color: #3a3a3a;
+}
+.list{
+    z-index: 1;
+}
+.list, .list + image{
+    position: absolute;
+    left: 25rpx;
+    top: 25rpx;
+    height: 60rpx;
+    width: 60rpx;
+}
+swiper{
+    height: 100%;
+    width: 100%;
+}

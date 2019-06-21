@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>padding属性使用</title>
+    <script>
+        function gb(){
+            alert("加载中，请稍等···");
+        }
+         var myys=5;       
+         var i=setInterval(function(){
+            document.getElementById("ys").innerHTML=myys;
+            myys--;
+            if(myys==0){
+                clearInterval(i);
+                window.location.href="https://www.imooc.com/";
+            }
+        },1000); 
+        function goback(){
+            window.history.back();
+        }   
+    </script>
+    <style>
+    li{
+        background-color: aquamarine;
+        font-size: 38px;
+    }
+    .eye{
+        border-radius: 50%;
+        border: 10px solid;
+        width: 150px;height: 150px;
+        padding: 10px;
+        background-color: currentColor;
+        background-clip: content-box;
+    }
+    </style>
+</head>
+<body onload="gb()">
+    <div class="dq">
+        <ol>
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+            <li>004</li>
+            <li>左对齐</li>
+        </ol> 
+        <img src="./images/logo_2x.png" alt="">       
+    </div>
+    <div class="eye"></div>
+    <h1>操作成功</h1>
+    <p><span id="ys">5</span>秒后回到主页&nbsp;<a href="javascript:goback()">返回</a></p>
+</body>
+</html>

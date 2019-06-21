@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var f=function(){
+        console.log('function');
+        return 'value';
+    }
+    f();
+    // 箭头函数
+    var arrow_f=(v)=>{
+        console.log('arrow function');
+        return 'value';
+    }
+    arrow_f('value');
+    
+    var arrow_1=v=>{
+        console.log(v);
+    }
+    arrow_1('arrow_1');
+
+    // var arrow_2=function(v){
+    //     return v;
+    // }
+    var arrow_2=v=>v;
+    
+    var arrow_3=function(){
+        return{
+            name:'韩梅梅',age:18
+        }
+    }
+    var arrow_4=()=>({name:'韩梅梅',age:18})
+    </script>
+</body>
+</html>

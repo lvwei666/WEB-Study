@@ -1,0 +1,13 @@
+.youhuiItem{
+  display: flex;
+}
+.youhuiItem:not(:first-child) {
+  border-top: 1px solid #eee;
+}
+image{
+  /* flex-grow flex-shrink width*/
+  flex: 0 0 30%;
+}
+.price{
+  color: red;
+}

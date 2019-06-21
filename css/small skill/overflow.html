@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>锚点</title>
+    <style>
+        .box{
+            border: 1px solid blue;
+            display: block;
+            height: 400px;
+            width: 600px;
+            overflow: hidden;
+        }
+        .click{
+            border: 1px solid #000;
+            margin: 20px 10px;
+            padding:0 6px;
+            text-decoration: none;
+        }
+        .link{
+            padding: 20px 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="list" id="one"><img src="./images/slider/c1.jpg" alt=""></div>
+        <div class="list" id="two"><img src="./images/slider/c2.jpg" alt=""></div>
+        <div class="list" id="three"><img src="./images/slider/c3.jpg" alt=""></div>
+        <div class="list" id="four"><img src="./images/slider/c4.jpg" alt=""></div>
+    </div>
+    <div class="link">
+        <a href="#one" class="click">1</a>
+        <a href="#two" class="click">2</a>
+        <a href="#three" class="click">3</a>
+        <a href="#four" class="click">4</a>
+    </div>
+</body>
+</html>

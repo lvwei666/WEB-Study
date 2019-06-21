@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>function expend</title>
+</head>
+<body>
+    <script>
+        // es5 时候 赋默认值 两种常见的做法
+    // function Person(name){
+    //     // 赋默认值
+    //     // if(!name){
+    //     //     name='default name';
+    //     // }
+    //     this.name=name||'default name';
+    // }
+
+        // es6做法
+    function Person(name='default name'){
+        this.name=name;
+    }
+    const p1=new Person('cst');
+    // {name:'cst'}
+    const p2=new Person();
+    // {name:'default name'}
+
+    // rest 参数 形式(...变量名)
+    // 作用:获取多余参数
+    // 搭配的变量是一个数组
+    // Rest parameter(参数) must be last
+    
+    const arrow_sum=(a,...args)=>{
+        console.log(a,args);
+    }
+    arrow_sum(1,2,3,4);
+    </script>
+</body>
+</html>

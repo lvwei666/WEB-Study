@@ -1,0 +1,29 @@
+<view class="item">
+  <view class="header">
+    <view class="left">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="right">
+      <open-data class="right-top" type="userNickName"></open-data>
+      <view class="right-bottom">{{createTime}}</view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="content">{{content}}</view>
+        <view class="img" wx:for="{{images}}" wx:key="index" bindtap="previewImage" id='{{item}}'>
+          <image src="{{item}}" mode="aspectFill" alt="" />
+        </view>
+  </view>
+  <view class="footer">
+    <view class="click">
+      <view class="click-left">
+        <image class="comment" src='../../images/comment.png'></image>
+        <text class="comment-num">0</text>
+      </view>
+      <view class="click-right">
+        <image class="support" src="{{like ? '../../images/support.png' : '../../images/support-active.png'}}" bindtap='like'></image>
+        <text class="support-num">{{num}}</text>
+      </view>
+    </view>
+  </view>
+</view>

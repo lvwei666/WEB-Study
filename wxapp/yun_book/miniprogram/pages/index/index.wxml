@@ -1,0 +1,3 @@
+<block wx:for="{{products}}">
+    <van-card price="{{item.view}}" desc="{{item.color}}" title="{{item.title}}" thumb="{{item.image}}" data-id="{{item.id}}" bindtap="click"/>
+</block>

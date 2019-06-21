@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "tabbar":"../../components/tabbar/index",
+    "icon":"../../components/icon/index",
+    "newsBox":"../../components/newsBox/index"
+  },
+  "enablePullDownRefresh":true,
+  "onReachBottomDistance":100
+}

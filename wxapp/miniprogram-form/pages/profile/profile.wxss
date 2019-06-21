@@ -1,0 +1,5 @@
+/* pages/profile/profile.wxss */
+.formLists{
+    display: flex;
+    justify-content: space-between;
+}

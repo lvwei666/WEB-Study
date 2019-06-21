@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdn.bootcss.com/underscore.js/1.9.1/underscore-min.js"></script>
+  <script>
+  // string:
+  // 1. 转为小写
+  // 2. 拼接一个字符串
+  // 3. split 为一个数组
+  // var s = '/123'
+  // s.toLowerCase
+  const lowCase = (str) => str.toLowerCase();
+  const add = str => `${str} hello world`;
+  const splitStr = str => str.split(' ');
+
+  const combineFun = _.compose(splitStr, add, lowCase);
+  // console.log(combineFun('HEXO'));
+  // 函数式编程
+  // 组合
+  // 管道
+  function pipe(...fns) {
+    return fns.reduce((prev, next) => {
+      // lowCase add  add(lowCase())
+      // add(lowCase()) splitStr splitStr(add(lowCase()))
+      // pipeFun === splitStr(add(lowCase()))
+      return (...arg) => next(prev(...arg));
+    })
+  }
+  function compose(...fns) {
+    return fns.reduce((prev, next) => {
+      // lowCase add  add(lowCase())
+      // add(lowCase()) splitStr splitStr(add(lowCase()))
+      // pipeFun === splitStr(add(lowCase()))
+      // return (...arg) => next(prev(...arg))
+      return (...arg) => prev(next(...arg));
+    })
+  }
+  const pipeFun = pipe(lowCase, add, splitStr);
+  // splitStr(add(lowCase()))
+  console.log(pipeFun('HEXO'));
+  // ["hexo", "hello", "world"]
+  </script>
+</body>
+</html>

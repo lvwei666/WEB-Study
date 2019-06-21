@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一个设计微信支付的页面</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="pay-page">
+        <div class="container">
+          <div class="header">
+              <div class="header-title">vip</div>
+              <div class="header-items flex">
+                  <div class="item flex1">
+                      <div class="item-price">
+                          <p class="item-price_month">1个月</p>
+                          <p class="item-price_old">原价19.9元</p>
+                          <p class="item-price_new">现价9元</p>
+                      </div>
+                  </div>
+                  <div class="item flex1 mr">
+                        <div class="item-price">
+                            <p class="item-price_month">3个月</p>
+                            <p class="item-price_old">原价19.9元</p>
+                            <p class="item-price_new">现价9元</p>
+                        </div>
+                    </div>
+                    <div class="item flex1">
+                            <div class="item-price">
+                                <p class="item-price_month">6个月</p>
+                                <p class="item-price_old">原价19.9元</p>
+                                <p class="item-price_new">现价9元</p>
+                            </div>
+                        </div>
+              </div>
+          </div>  
+           <div class="content"></div> 
+           <div class="footer"></div>
+        </div>
+    </div>
+    <script>
+        var Type=document.querySelectorAll('.item-price');
+        for(var i=0;i<Type.length;i++){
+            Type[i].addEventListener('click',function(){
+                for(let j of Type){
+                    j.classList.remove('active');
+                }
+                this.classList.add('active');
+            });
+        }
+    </script>
+</body>
+</html>

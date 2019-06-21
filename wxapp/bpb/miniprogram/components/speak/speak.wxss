@@ -1,0 +1,73 @@
+/* components/speak/speak.wxss */
+.item{
+    margin: 20rpx;
+    border-radius: 10rpx;
+    background-color: white;
+}
+.header{
+    padding: 20rpx 0 25rpx 20rpx;
+}
+.header .left{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    display:inline-block;
+}
+.header .right{
+  display: inline-block;
+  margin-left: 30rpx;
+}
+.right-top{
+  font-size:14px;
+  margin-bottom:10rpx;
+}
+.right-bottom{
+  font-size: 12px;
+  color: #aaa;
+}
+.body{
+    padding-left: 10px;
+    margin-bottom:80rpx;
+    font-size:15px;
+}
+.body .img{
+  display:inline-block;
+}
+.body .img image{
+  width: 250rpx;
+  height: 250rpx;
+  margin:5rpx 10rpx 0 0;
+}
+.footer{
+    position: relative;
+    height: 50rpx;
+}
+.click{
+    position: absolute;
+    right: 40rpx;
+    bottom: 20rpx;
+}
+.click-left{
+    display:inline-block;
+    padding-right:40rpx;
+}
+.click-right{
+    display:inline-block;
+}
+.footer .click .support{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right:15rpx;
+}
+.footer .click .comment{
+    width: 45rpx;
+    height: 45rpx;
+    margin-right:15rpx;
+    vertical-align: middle;
+}
+.comment-num{
+  color: #aaa;
+}
+.support-num{
+  color: #aaa;
+}

@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/accountBooks/accountBooks"
+  ],
+  "window": {
+    "backgroundColor": "#3a3a3a",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#35353a",
+    "navigationBarTitleText": "旅行小账本",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

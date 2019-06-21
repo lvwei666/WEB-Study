@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <link href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>影院热映</title>
+</head>
+<body>
+    <header class="nav">
+        <i class="arrow-left"></i>
+        <span>影片详情</span>
+    </header>
+    <div class="page">
+        <section class="movie-header">
+            <div class="movie">
+                <div class="movie-bg"></div>
+                <div class="movie-filter"></div>
+                <div class="movie-container">
+                    <div class="movie-cover">
+                        <a href="#" class="link">
+                            <img src="" alt="" class="img" id="moviePic">
+                        </a>
+                    </div>
+                    <div class="movie-content">
+                        <div class="movie-name">
+                            <span></span>
+                        </div>
+                        <div class="movie-ename">
+                            <span></span>
+                        </div>
+                        <div class="movie-score">
+                            <div class="released-score">
+                                <div class="rating" id="rating">
+                                    <!-- stars -->
+                                    <span class="rating-score"></span>
+                                </div>
+                                <div class="score-num">
+                                    (<span></span>)人评分
+                                </div>
+                            </div>
+                        </div>
+                        <div class="movie-detail">
+                            <p class="movie-type"></p>
+                            <p class="address-time">
+                                <span class="address">zg</span>
+                                /
+                                <span class="time">111</span>
+                                分钟
+                            </p>
+                            <p class="date"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="operating flex">
+                    <div class="movie-watch flex1">
+                        <img src="./images/heart.png" alt="">
+                        <span>想看</span>
+                    </div>
+                    <div class="movie-mark flex1">
+                        <img src="./images/star2.png" alt="">
+                        <span>评分</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section2 -->
+        <section class="section-seperate section-expander">
+            <div class="text-expander" id="text-expander">
+                <div class="text-expander_content close">
+                    <p></p>
+                </div>
+                <div class="text-expander_button">
+                    <i class="icon-chevron_down"></i>
+                </div>
+            </div>
+        </section>
+        <!-- section3 -->
+        <section class="section-seperate section-movie-celebrities">
+            <p class="yy">演职人员</p>
+            <ul class="movie-celebrities">
+                <li>
+                    <a href="#" class="link">
+                        <img src="" alt="" class="img noneBg">
+                        <span></span>
+                        <span class="movie-celebrities-roles"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link">
+                        <img src="" alt="" class="img noneBg">
+                        <span></span>
+                        <span class="movie-celebrities-roles"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link">
+                        <img src="" alt="" class="img noneBg">
+                        <span></span>
+                        <span class="movie-celebrities-roles"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link">
+                        <img src="" alt="" class="img noneBg">
+                        <span></span>
+                        <span class="movie-celebrities-roles"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link">
+                        <img src="" alt="" class="img noneBg">
+                        <span></span>
+                        <span class="movie-celebrities-roles"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link">
+                        <img src="" alt="" class="img noneBg">
+                        <span></span>
+                        <span class="movie-celebrities-roles"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link">
+                        <img src="" alt="" class="img noneBg">
+                        <span></span>
+                        <span class="movie-celebrities-roles"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="link">
+                        <img src="" alt="" class="img noneBg">
+                        <span></span>
+                        <span class="movie-celebrities-roles"></span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- toast -->
+        <div id="toast">
+            <div class="weui-mask_transparent"></div>
+            <div class="weui-toast">
+              <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+              <p class="weui-toast__content">已标记为想看</p>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function(){
+        $.ajax({
+            url:'https://www.easy-mock.com/mock/5ca466f013e4cf68f04a430a/lvmengimgMovie-demo',
+            type:'get',
+            success:function(response){
+                console.log(response);
+                $('#moviePic').attr('src',response.data.moviePic2);
+                $('.movie-content .movie-name span').html(response.data.name);
+                $('.movie-content .movie-ename span').html(response.data.nameEnglish);
+                stars(response.data.star);
+                $('.rating-score').html(response.data.grade);
+                $('.score-num span').html(response.data.people);
+                $('.movie-type').html(response.data.type);
+                $('.address-time .address').html(response.data.where);
+                $('.address-time .time').html(response.data.time);
+                $('.movie-detail .date').html(response.data.date);
+                $('.text-expander_content p').html(response.data.desc);
+                people(response.data.person);
+            }
+        })
+        function stars(e){
+            let m = Math.floor(e);
+            if(e > m){
+                $('#rating').prepend('<img src="./images/star-h.png" class="img">');
+            }
+            for(let i = 0;i < m;i ++){
+                $('#rating').prepend('<img src="./images/star.png" class="img">');
+            }
+        }
+        $('.movie-watch').click(function(){
+            if($(this).hasClass('active')){
+                $('.movie-watch').removeClass('active');
+                $('.movie-watch img').attr('src','./images/heart.png');
+                $('#toast .weui-toast__content').html('已取消想看');
+            }else{
+                $('.movie-watch').addClass('active');
+                $('.movie-watch img').attr('src','./images/heart1.png');
+                $('#toast .weui-toast__content').html('已标记为想看');
+            }
+            $('#toast').css('display','block');
+            setTimeout(()=>{
+                $('#toast').css('display','none');
+            },1500)
+        })
+        $('.icon-chevron_down').on('click',function(){
+            if($('.text-expander_content').hasClass('close')){
+                $('.text-expander_content').removeClass('close');
+                $('.icon-chevron_down').addClass('up');
+            }else{
+                $('.text-expander_content').addClass('close');
+                $('.icon-chevron_down').removeClass('up');
+            }
+        })
+        // 演员表
+        function people(one){
+            const li=document.querySelectorAll('.movie-celebrities li');
+            // console.log(li[0].childNodes[1].childNodes[1]);
+            for(let i=0;i<li.length;i++){
+                li[i].childNodes[1].childNodes[1].setAttribute('src',one[i].avatal);
+                li[i].childNodes[1].childNodes[3].innerHTML=one[i].name;
+                li[i].childNodes[1].childNodes[5].innerHTML=one[i].sort;
+            }
+        }
+    })()
+    </script>
+</body>
+</html>

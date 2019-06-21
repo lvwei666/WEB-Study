@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+    // 'use strict';
+    // window.myName = 'wemi';
+    // var obj = {
+    //     myName: 'sven',
+    //     getName: function(){
+    //         return this.myName;
+    //     }
+    // }    
+    // console.log(obj.getName());
+    // var getName2 = obj.getName;//生成期
+    // console.log(getName2);
+    // //this丢失
+    // console.log(getName2());//运行方式
+
+    // var getId = function(id){
+    //     return document.getElementById(id);
+    // }
+    // console.log(getId('div1'));
+
+    // var getId = document.getElementById;
+    // console.log(getId('div1'));
+
+    // 闭包可以让函数运行时找到他定义时的变量
+    document.getElementById = (function(func){
+        // 闭包的最佳手段
+        return function(){
+            return func.apply(document,arguments);
+        }
+    })(document.getElementById);
+    var getId = document.getElementById;
+    console.log(getId('div1'));
+    </script>
+</body>
+</html>

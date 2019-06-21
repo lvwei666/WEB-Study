@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类数组</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        // 类数组对象
+        // 1. 有length 属性
+        // 2. 通过索引 获取值
+        // Array.from 从一个类数组中创建一个真数组
+        const obj={
+            0:1,
+            1:2,
+            2:3,
+            3:4,
+            length:5
+        }
+
+        const obj_arr=Array.from(obj);
+        const lis=document.querySelectorAll('li');
+        const lis_arr=Array.from(lis);
+
+        // es5 时候 将传入的参数整理为数组的方式
+    function sum(){
+        const args=Array.from(arguments);
+        console.log(args.map(ele=>2*ele));
+        // return [2,4,6,8];
+    }
+    sum(1,2,3,4);
+    
+    const arr=[2,4,6,8];
+    const newArr=arr.map(ele=>2*ele);
+
+    // .map
+    // newArr=[4,8,12,16];
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    html,body{
+        height: 100%;
+        margin: 0;
+    }
+    /* 单屏应用 */
+    .page{
+        height: 100%;
+        background-color: #efefef;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    .box{
+        width: 120%;
+        background-color: red;
+        height: 3000px;
+    }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

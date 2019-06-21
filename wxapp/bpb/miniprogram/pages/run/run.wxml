@@ -1,0 +1,96 @@
+<view class="container">
+  <van-tabs swipeable active="{{active}}" color="#57BFB6">
+    <van-tab title="{{navData[0].name}}">
+      <view class="content">
+        <text class="desc">{{navData[0].desc}}</text>
+        <view class="anim"></view>
+        <view class="start" bindtap="toRun">开始</view>
+      </view>
+    </van-tab>
+    <van-tab title="{{navData[1].name}}">
+      <view class="content">
+        <text class="desc">{{navData[1].desc}}</text>
+        <view class="anim"></view>
+        <view class="start">开始</view>
+      </view>
+    </van-tab>
+    <van-tab title="{{navData[2].name}}">
+      <view class="content">
+        <text class="desc">{{navData[2].desc}}</text>
+        <view class="yp">
+          <view class="yp-desc create">
+            <image src="../../images/begin.png" class="card" />
+            <text>发起约跑</text>
+          </view>
+          <view class="yp-desc add">
+            <image src="../../images/join.png" class="card" />
+            <text>加入约跑</text>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+  <view class="address">
+    <image src="../../images/aim.png" class="aim" />
+    <text class="add">东华理工大学南昌广兰校区</text>
+  </view>
+  <view class="top">
+    <view class="top-aim" bindtap='aim'>学期目标</view>
+    <view class="top-grade">计入成绩0.00公里</view>
+  </view>
+  <view class="music" bindtap='toMusic'>
+    <image src="../../images/music-2.png" class="music-btn" />
+  </view>
+  <van-action-sheet show="{{ show }}" title="学期提示" bind:close="onClose">
+    <view class='content-news'>
+      <view class='item'>
+        <view class='title'>
+          <text>学期目标</text>
+        </view>
+        <view class='data'>
+          <text>120公里</text>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='title'>
+          <text>学期起止日期：</text>
+        </view>
+        <view class='data'>
+          <text>2019.02.25-2019.06.07</text>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='title'>
+          <text>每日成绩上限：</text>
+        </view>
+        <view class='data'>
+          <text>3.0公里</text>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='title'>
+          <text>单次最低要求：</text>
+        </view>
+        <view class='data'>
+          <text>2.0公里</text>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='title'>
+          <text>配速：</text>
+        </view>
+        <view class='data'>
+          <text>3'10''~10'00''分钟/公里</text>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='title'>
+          <text>跑步有效时间：</text>
+        </view>
+        <view class='data'>
+          <text>05:30-22:30</text>
+        </view>
+      </view>
+    </view>
+  </van-action-sheet>
+</view>

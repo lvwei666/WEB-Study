@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-tab": "../vant-weapp/dist/tab/index",
+    "van-tabs": "../vant-weapp/dist/tabs/index",
+    "van-action-sheet": "../vant-weapp/dist/action-sheet/index"
+  }
+}
