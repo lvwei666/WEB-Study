@@ -11,4 +11,4 @@
   ./node_modules/.bin/sequelize db:migrate 执行迁移
   ./node_modules/.bin/sequelize db:migrate:undo 撤回
   ./node_modules/.bin/sequelize seed:create --name init-shops 初始化项目
-  
+  ./node_modules/.bin/sequelize db:seed:all
