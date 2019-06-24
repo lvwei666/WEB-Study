@@ -1,9 +1,14 @@
-import React, { component } from 'react';
-import WithLogin from './WithLogin';
+import React, { Component } from 'react';
+import withLogin from './WithLogin';
 
 @withLogin
-class ShopCart extends React.Component {
+class ShopCart extends Component {
   render() {
+    // if (!isLogin) {
+    //   return (
+    //     <button>需要登录</button>
+    //   )
+    // }
     const { a, b } = this.props;
     return (
       <ul>
