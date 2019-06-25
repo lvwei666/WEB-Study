@@ -26,7 +26,7 @@ function  getDistance(lat1,lng1,lat2,lng2) {
   for (let i = 0; i < point.length-1; i++){
     dis = getDistance(point[i].latitude,point[i].longitude,point[i+1].latitude,point[i+1].longitude);
     sum += (+dis);
-    // console.log(dis)
+    console.log(dis)
   }
   console.log(sum.toFixed(4));
 
