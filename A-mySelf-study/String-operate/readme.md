@@ -22,7 +22,7 @@ str=”jpg|bmp|gif|ico|png”;
 arr=theString.split(”|”);
 //arr是一个包含字符值”jpg”、”bmp”、”gif”、”ico”和”png”的数组
 
-函数：John() 
+函数：Join() 
 功能：使用您选择的分隔符将一个数组合并为一个字符串
 例子：
 var delimitedString=myArray.join(delimiter);
