@@ -4,7 +4,9 @@ const koaStatic = require('koa-static');
 const path = require('path');
 const router = require('koa-router')();
 // res.set
-
+app.use(koaStatic(
+  path.join(__dirname, './public/')
+))
 app.use(async (ctx, next) => {
   // 允许哪个域名请求 *
   ctx.set('Access-Control-Allow-Origin', 'http://localhost:8080');
