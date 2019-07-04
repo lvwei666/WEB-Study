@@ -21,14 +21,15 @@ export function getNewAlbum() {
     URL.newalbum,
     {
       ...PARAM,
-      "-": 'getUCGI1694554007873501',
       g_tk: 5381,
-      loginUin: 0,
       hostUin: 0,
-      platform: 'yqq.json',
+      platform: 'yqq',
       needNewCode: 0,
-      data: `{"new_album":{"module":"newalbum.NewAlbumServer","method":"get_new_album_info","param":{"area":1,"start":0,"num":20}},"new_album_tag":{"module":"newalbum.NewAlbumServer","method":"get_new_album_area","param":{}},"comm":{"ct":24,"cv":0}}`
+      data: `{"albumlib":{"method":"get_album_by_tags","param":{"area":1,"company":-1,"genre":-1,"type":-1,"year":-1,"sort":2,"get_tags":1,"sin":0,"num":50,"click_albumid":0},"module":"music.web_album_library"}}`
     },
-    OPTION
+    {
+      param: 'callback',
+      prefix: 'callback'
+    }
   )
 }
