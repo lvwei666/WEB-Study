@@ -33,3 +33,19 @@ export function getNewAlbum() {
     }
   )
 }
+
+export function getAlbumInfo(mid) {
+  return jsonp(
+    URL.albumInfo,
+    {
+      ...PARAM,
+      albummid: mid,
+		  g_tk: 5381,
+		  loginUin: 0,
+		  hostUin: 0,
+		  platform: 'yqq.json',
+		  needNewCode: 0
+    },
+    OPTION
+  )
+}
