@@ -49,3 +49,4 @@ export function getAlbumInfo(mid) {
     OPTION
   )
 }
+

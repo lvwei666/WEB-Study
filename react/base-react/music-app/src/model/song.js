@@ -1,4 +1,4 @@
-class Song {
+export class Song {
   constructor(id, mId, name, img, duration, url, singer) {
     this.id = id;
     this.mId = mId;

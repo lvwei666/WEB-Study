@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let a = {
+      user: '蜗牛',
+      fn: function(e, m) {
+        console.log(this.user);
+        console.log(e + m);
+      }
+    }
+    let b = a.fn;
+    // b();
+
+    // b.call(a, 2, 3);
+
+    // b.apply(a, [2, 3]);
+
+    let c = b.bind(a, 2);
+    c(6, 2);
+
+    // a.fn();
+  </script>
+
+  <script>
+    // call() 原理
+    Function.prototype.call = function () {
+      let [thisArg, ...args] = [...arguments];
+      if (!thisArg) {
+        thisArg = typeof window === 'undefined' ? global : window;
+      }
+      // this的指向是当前函数 func
+      thisArg.func = this;
+      // 执行函数
+      let result = thisArg.func(...args)
+      // thisArg上并没有func属性
+      delete thisArg.func;
+      return result;
+    }
+  </script>
+</body>
+</html>

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 // import { Redirect } from 'react-router-dom';
 import Recommend from './recommend/Recommend';
-import Ranking from './ranking/Ranking';
+import Ranking from '../containers/Ranking';
 import Search from './search/Search';
 import Player from '../containers/Player';
 import '../assets/stylus/reset.styl';

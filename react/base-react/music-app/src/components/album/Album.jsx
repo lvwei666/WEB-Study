@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Scroll from '../../common/scroll/Scroll';
 import { getAlbumInfo } from '../../api/recommend';
+import { getSongVKey } from '../../api/song';
 import * as AlbumModel from '../../model/album';
 import * as SongModel from '../../model/song';
 import Header from '../../common/header/Header';
@@ -12,6 +13,15 @@ class Album extends Component {
     songs: [],
     album: {},
     loading: true 
+  }
+  getSongUrl = (song, mId) => {
+    // 请求
+    getSongVKey(mId).then(res => {
+      if (res.data.items) {
+        let item = res.data.items[0];
+        song.url = `http://dl.stream.qqmusic.qq.com/${item.filename}?vkey=${item.vkey}&guid=3655047200&fromtag=66`
+      }
+    })
   }
   componentDidMount() {
     const id = this.props.match.params.id;
@@ -26,6 +36,7 @@ class Album extends Component {
       let songs = [];
       songList.forEach(item => {
         let song = SongModel.createSong(item);
+        this.getSongUrl(song, item.songmid)
         songs.push(song);
       })
       this.setState({

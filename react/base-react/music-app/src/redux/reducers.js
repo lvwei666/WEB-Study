@@ -3,7 +3,8 @@ import * as Actiontype from './actionTypes';
 const initialState = {
   showStatus: false,
   song: {}, // current
-  songs: []  
+  songs: [],
+  lists: []
 }
 /**
  * {type: 'SHOW_PLAYER', showStatus: true}
@@ -16,7 +17,7 @@ function showStatus(showStatus = initialState.showStatus, action) {
     default:
       return showStatus;
   }
-}
+} 
 /**
  * {type: 'CHANGE_SONG', song: {}}
  * type
@@ -31,7 +32,18 @@ function song(song = initialState.song, action) {
   }
 }
 
+function todo(lists = initialState.lists, action) {
+  switch (action.type) {
+    case 'ADD': {
+      return initialState.lists.concat([action.val]);
+    }
+    default: 
+      return lists;
+  }
+}
+
 export default combineReducers({
   showStatus,
-  song
+  song,
+  todo
 })
