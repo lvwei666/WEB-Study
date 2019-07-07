@@ -1,17 +1,21 @@
 import { connect } from 'react-redux';
 import Ranking from '../components/ranking/Ranking';
-import { add } from '../redux/action';
+import { add, changeStatus } from '../redux/action';
 
 const mapStateToProps = (state) => {
   console.log(state)
   return {
-    lists: state.todo
+    lists: state.todo,
+    isTrue: state.isTrue
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
     addTodo: (val) => {
       dispatch(add(val))
+    },
+    handleIsTrue: (val2) => {
+      dispatch(changeStatus(val2))
     }
   }
 }

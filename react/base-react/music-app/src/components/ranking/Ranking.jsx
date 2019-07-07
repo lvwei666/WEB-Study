@@ -9,7 +9,7 @@ class Ranking extends Component {
     })
   }
   render() { 
-    const { lists, addTodo } = this.props;
+    const { lists, addTodo, isTrue, handleIsTrue } = this.props;
     const value = this.state.value;
     console.log(lists)
     return ( 
@@ -21,7 +21,7 @@ class Ranking extends Component {
             {
               lists.map((list, index) => {
                 return (
-                  <li key={index}>{list}</li>
+                  <li style={{textDecoration: isTrue && "line-through"}} onClick={() => handleIsTrue(!isTrue)} key={index}>{list}</li>
                 )
               })
             }

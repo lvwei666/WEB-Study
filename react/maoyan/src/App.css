@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+}
+
+.header-nav{
+  background-color: #ef4238;
+  color: white;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 50px;
+  margin: 0 52.5px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ant-tabs-tab{
+  font-size: 15px;
+  font-weight: 700;
+}
+.ant-tabs-bar{
+  border-bottom: none;
+  margin: 0;
+}
+.ant-tabs-tab-active{
+  font-size: 15px;
+  font-weight: 700 !important;
+  color: #ef4238 !important;
+}
+.ant-tabs-ink-bar{
+  background-color: #ef4238 !important;
+}
+.topbar{
+  display: flex;
+  border-bottom: 1px solid #e6e6e6;
+  height: 44px;
+  justify-content: space-between;
+}
+.left, .mid, .right{
+  flex: 1;
+}
+.left{
+  font-size: 15px;
+  margin: auto;
+}
+.arrow{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 4px solid #b0b0b0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  margin-left: 4px;
+  margin-top: 5px;
+}
+.search-icon{
+  width: 60px;
+  height: 44px;
+  background: url("./assets/images/search.png") 35px 12px no-repeat;
+  background-size: 20px;
+}

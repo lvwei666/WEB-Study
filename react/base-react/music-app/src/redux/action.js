@@ -21,3 +21,8 @@ export function add(val) {
     type: 'ADD', val
   }
 }
+export function changeStatus(val2) {
+  return {
+    type: 'CHANGE', val2
+  }
+}

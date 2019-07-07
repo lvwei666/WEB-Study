@@ -4,7 +4,8 @@ const initialState = {
   showStatus: false,
   song: {}, // current
   songs: [],
-  lists: []
+  lists: [],
+  isTrue: false
 }
 /**
  * {type: 'SHOW_PLAYER', showStatus: true}
@@ -35,15 +36,25 @@ function song(song = initialState.song, action) {
 function todo(lists = initialState.lists, action) {
   switch (action.type) {
     case 'ADD': {
-      return initialState.lists.concat([action.val]);
+      return lists.concat([action.val]);
     }
     default: 
       return lists;
   }
 }
 
+function isTrue(isTrue = initialState.isTrue, action) {
+  switch (action.type) {
+    case 'CHANGE': {
+      return action.val2
+    }
+    default:
+      return isTrue
+  }
+}
 export default combineReducers({
   showStatus,
   song,
-  todo
+  todo,
+  isTrue
 })
