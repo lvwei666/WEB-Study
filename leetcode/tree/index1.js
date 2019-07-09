@@ -24,4 +24,25 @@ function inorderTraversal(root) {
   }
   return items;
 }
+
+var inorderTree = (root) => {
+  var stack = [], //堆栈
+  result = [], //解脱 左边出来了
+  cur; //当前的
+  cur = root;
+  // 未处理
+  while (stack.length > 0 || cur !== null) {
+    // 结点不为空
+    if (cur !== null) {
+      stack.push(cur);
+      cur = cur.left; //null 叶子
+    } else {
+      cur = stack.pop(); //第一次是不是最左边的叶子
+      result.push(cur.val);
+      cur = cur.right;
+    }
+  }
+  return result;
+}
 console.log(inorderTraversal(a1));
+console.log(inorderTree(a1));

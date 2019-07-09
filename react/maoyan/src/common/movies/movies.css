@@ -1,9 +1,11 @@
 .movie{
   position: fixed;
   left: 15px;
-  width: 100vh;
-  padding-left: 15px;
-  padding-top: 48px;
+  width: 93vw;
+  overflow-y: scroll;
+}
+.item{
+  position: relative;
 }
 .main-block{
   display: flex;
@@ -39,6 +41,17 @@
   color: #faaf00;
   font-size: 15px;
 }
+.person{
+  color: #faaf00;
+  font-size: 15px;
+  font-weight: 600;
+}
+.p-suffix{
+  font-size: 13px;
+  display: inline-block;
+  color: #666;
+  font-weight: normal;
+}
 .button{
   width: 47px;
   height: 27px;
@@ -50,6 +63,11 @@
   white-space: nowrap;
   font-size: 12px;
   cursor: pointer;
+  position: absolute;
+  right: 15px;
+}
+.btn{
+  background-color: #3c9fe6;
 }
 .fix{
   color: #fff;
