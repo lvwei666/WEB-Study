@@ -134,10 +134,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "proxy": {
-    "/*": {
-      "target": "http://localhost:3000"
-    }
   }
 }

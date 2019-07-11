@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 防抖节流 -->
+  <div class="debounce">
+    <button id="submit">提交</button>
+  </div>
+  <script>
+    function debounce(fn, time) {
+      let previous = 0, timer = null
+      // 将debounce处理的的结果当作函数返回
+      return function(...args) {
+        // 获取当前的时间，转化为时间戳
+        let now = +new Date()
+
+        // 判断上一次触发的时间和本次触发的时间差是否小于时间间隔
+        if (now - previous < time) {
+          // 设定一个新的计时器
+          // 定时器时间结束后执行fn
+          if (timer) clearTimeout(timer)
+          timer = setTimeout(() => {
+            previous = now
+            fn.apply(this, args)  //因为要传参，而参数的个数不固定
+          }, time)
+        } else {
+          previous = now
+          fn.apply(this, args)
+        }
+      }
+    }
+    const oDebounce = debounce(() => test(), 3000)
+    let oSubmit = document.getElementById('submit')
+    oSubmit.addEventListener('click', oDebounce)
+    function test() {
+      console.log('提交成功');
+    }
+  </script>
+</body>
+</html>
