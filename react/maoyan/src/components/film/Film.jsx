@@ -23,7 +23,7 @@ class Film extends Component {
   }
   gMovie = () => {
     getMovies().then(res => {
-      // console.log(res)
+      console.log(res)
       this.setState({
         movies: res.data.data.movieList
       })
@@ -31,7 +31,7 @@ class Film extends Component {
   }
   gMovie2 = () => {
     getMovies2().then(res => {
-      // console.log(res)
+      console.log(res)
       this.setState({
         coming: res.data.data.coming
       })
@@ -39,7 +39,7 @@ class Film extends Component {
   }
   gMovie3 = () => {
     getMovies3().then(res => {
-      // console.log(res)
+      console.log(res)
       this.setState({
         movies3: res.data.data.coming
       })
