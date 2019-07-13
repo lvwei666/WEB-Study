@@ -11,17 +11,20 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
+    <sideBar></sideBar>
   </div>
 </template>
 
 <script>
 import header from '@/components/header'
 import tab from '@/components/tab'
+import sideBar from '@/components/sideBar'
 export default {
   name: 'App',
   components: {
     'v-header': header,
-    'v-tab': tab
+    'v-tab': tab,
+    sideBar
   }
 }
 </script>
