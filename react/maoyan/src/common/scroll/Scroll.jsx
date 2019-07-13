@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BScroll from 'better-scroll';
-import './scroll.css';
+import './scroll.styl';
 class Scroll extends Component {
   state = {  }
   componentDidUpdate() {

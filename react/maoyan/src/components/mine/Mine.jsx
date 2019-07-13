@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './mine.css';
+import './mine.styl';
 class Mine extends Component {
   state = {  }
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './cinema.css';
+import './cinema.styl';
 class Cinema extends Component {
   state = {  }
   render() {

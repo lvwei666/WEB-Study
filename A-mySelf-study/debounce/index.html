@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>防抖节流</h1>
+  <p><button id="hh">+</button></p>
+  <script>
+    function add() {
+      console.log(123)
+    }
+    function debounce(fn, time) {
+      let timer = null, pre = 0;
+      return function(...args) {
+        let now = +new Date();
+        if (now - pre < time) {
+          if (timer) clearTimeout(timer)
+          timer = setTimeout(() => {
+            pre = now;
+            fn.apply(this, args)
+          }, time)
+        } else {
+          pre = now;
+          fn.apply(this, args)
+        }
+      }
+    }
+    const debounce1 = debounce(() => add(), 3000)
+    document.getElementById('hh').addEventListener('click', debounce1)
+  </script>
+</body>
+</html>

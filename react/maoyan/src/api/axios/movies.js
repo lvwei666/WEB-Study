@@ -12,4 +12,3 @@ export function getMovies2 () {
 export function getMovies3 () {
   return $axios().get(URL.movies3)
 }
-

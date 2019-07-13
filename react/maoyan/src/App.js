@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Film from './components/film/Film';
 import Cinema from './components/cinema/Cinema';
 import Mine from './components/mine/Mine';
-import './App.css';
+import './App.styl';
 
 class App extends React.Component {
   state = {  }

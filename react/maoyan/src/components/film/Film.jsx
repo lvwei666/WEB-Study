@@ -1,15 +1,18 @@
 import React, { Component } from 'react'; 
 import Movies from '../../common/movies/Movies';
-import { getMovies, getMovies2, getMovies3 } from '../../api/movies';
+import { getMovies, getMovies2, getMovies3 } from '../../api/axios/movies';
 import Expected from '../../common/expected/Expected';
+import { forceCheck } from 'react-lazyload';
+import Debounce from '../../api/debounce/index';
 import 'antd/dist/antd.css';
-import './film.css';
+import './film.styl';
 import { Tabs } from 'antd';
 const { TabPane } = Tabs;
 class Film extends Component {
   state = { 
     height: 0,
     movies: [],
+    coming: [],
     movies3: []
    }
    componentDidMount() {
@@ -20,12 +23,28 @@ class Film extends Component {
     this.gMovie()
     this.gMovie2()
     this.gMovie3()
+    this.refs.movieHot.addEventListener('scroll', Debounce(() => this.cal(), 300))
+  }
+  cal = () => {
+    let high1 = this.refs.movieHot.scrollHeight;
+    let high2 = this.refs.movieHot.clientHeight;
+    if (this.refs.movieHot.scrollTop > high1 - high2 - 1) {
+      this.gMovie()
+    }
+  }
+  handleScroll = () => {
+    let high3 = this.refs.expect.scrollHeight;
+    let high4 = this.refs.expect.clientHeight;
+    if (this.refs.expect.scrollTop > high3 - high4 - 2) {
+      this.gMovie3()
+    }
+    forceCheck()
   }
   gMovie = () => {
     getMovies().then(res => {
       console.log(res)
       this.setState({
-        movies: res.data.data.movieList
+        movies: this.state.movies.concat(res.data.data.movieList)
       })
     })
   }
@@ -41,7 +60,7 @@ class Film extends Component {
     getMovies3().then(res => {
       console.log(res)
       this.setState({
-        movies3: res.data.data.coming
+        movies3: this.state.movies3.concat(res.data.data.coming)
       })
     })
   }
@@ -58,19 +77,37 @@ class Film extends Component {
         <div className="mid">
           <Tabs defaultActiveKey="1">
             <TabPane tab="正在热映" key="1">
-              <div className="movie" style={{height: `${height}px`}}>
-                <Movies movies={movies}/>
+              <div className="movie" ref="movieHot" style={{height: `${height}px`}} onScroll={forceCheck}>
+                {
+                  movies.map((movie, index) => {
+                    return (
+                      <Movies movie={movie} key={index}/>
+                    )
+                  })
+                }
               </div>
             </TabPane>
             <TabPane tab="即将上映" key="2">
-              <div className="most-expected" style={{height: `${height}px`}}>
+              <div className="most-expected" style={{height: `${height}px`}} onScroll={this.handleScroll} ref="expect">
                 <p className="title">近期最受期待</p>
                 <div className="most-expected-list">
-                  <Expected coming={coming}/>
+                  {
+                    coming.map((come, index) => {
+                      return (
+                        <Expected come={come} key={index}/>
+                      )
+                    })
+                  }
                 </div>
                 <div className="coming-list">
-                <p className="group-date">7月12日 周五</p>
-                <Movies movies={movies3}/>
+                  <p className="group-date">7月12日 周五</p>
+                  {
+                    movies3.map((movie, index) => {
+                      return (
+                        <Movies movie={movie} key={index}/>
+                      )
+                    })
+                  }
                 </div>
               </div>
             </TabPane>
