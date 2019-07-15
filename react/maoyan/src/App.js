@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Film from './components/film/Film';
 import Cinema from './components/cinema/Cinema';
 import Mine from './components/mine/Mine';
+import Which from './components/which/Which';
 import './App.styl';
 
 class App extends React.Component {
@@ -21,9 +22,10 @@ class App extends React.Component {
         <Link to="/mine"><div className="nav-icon-wrapper" data-index="2" onClick={this.changeActive}><img className="nav-icons" src={index === "2" ? [require('./assets/images/mine-active.png')] : [require('./assets/images/mine.png')]} alt=""/><span className="nav-text" style={{color: index === "2" ? 'red' : 'gray'}}>我的</span></div></Link>
       </div>
       <Switch>
-        <Route path="/movie" component={Film}></Route>
+        <Route path="/movie" exact component={Film}></Route>
         <Route path= "/cinema" component={Cinema}></Route>
         <Route path="/mine" component={Mine}></Route>
+        <Route path="/movie/:id" component={Which}></Route>
         <Route path="/" component={Film}></Route>
       </Switch>
       </Router>

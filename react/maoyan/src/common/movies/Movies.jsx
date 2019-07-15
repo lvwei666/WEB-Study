@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import './movies.styl';
 class Movies extends Component {
@@ -7,6 +8,7 @@ class Movies extends Component {
     const { movie } = this.props;
     return (
       <div className="item">
+        <Link to={`/movie/${movie.id}`}>
         <div className="main-block">
           <div className="avatar">
             <LazyLoad>
@@ -35,6 +37,7 @@ class Movies extends Component {
             <div className="button btn"><span className="fix">预售</span></div>
           }
         </div>
+        </Link>
       </div>
     )
   }
