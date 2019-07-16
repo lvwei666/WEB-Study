@@ -23,12 +23,12 @@ class Film extends Component {
     this.gMovie()
     this.gMovie2()
     this.gMovie3()
-    this.refs.movieHot.addEventListener('scroll', Debounce(() => this.cal(), 300))
+    this.refs.movieHot.addEventListener('scroll', Debounce(() => this.cal(), 400))
   }
   cal = () => {
     let high1 = this.refs.movieHot.scrollHeight;
     let high2 = this.refs.movieHot.clientHeight;
-    if (this.refs.movieHot.scrollTop > high1 - high2 - 1) {
+    if (this.refs.movieHot.scrollTop > high1 - high2 - 2) {
       this.gMovie()
     }
   }

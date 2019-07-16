@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Animal(name) {
+      this.name = name || 'Animal';
+      this.sleep = function () {
+        console.log(this.name + '正在睡觉！');
+      }
+    }
+    Animal.prototype.eat = function (food) {
+      console.log(this.name + '正在吃：' + food);
+    }
+    // 寄生组合继承
+    function Cat (name) {
+      Animal.call(this);
+      this.name = name || 'tom';
+    }
+    (function() {
+      var Super = function() {};
+      Super.prototype = Animal.prototype;
+      Cat.prototype = new Super();
+    })()
+    var cat = new Cat();
+    console.log(cat.name);
+    cat.sleep();
+
+    // 组合继承
+    // function Cat (name) {
+    //   Animal.call(this);
+    //   this.name = name || 'tom';
+    // }
+    // Cat.prototype = new Animal();
+    // Cat.prototype.constructor = Cat;
+    // var cat = new Cat();
+    // console.log(cat.name)
+    // cat.sleep();
+    // cat.eat('fish')
+
+    // 构造继承
+    // function Cat(name) {
+    //   Animal.call(this);
+    //   this.name = name || 'tom';
+    // }
+    // var cat = new Cat();
+    // console.log(cat.name)
+    // cat.sleep()
+    
+    // 原型继承
+    // function Cat() { }
+    // Cat.prototype = new Animal();
+    // Cat.prototype.name = 'cat';
+    // var cat = new Cat();
+    // console.log(cat.name)
+    // cat.eat('fish')
+    // cat.sleep()  
+  </script>
+</body>
+
+</html>

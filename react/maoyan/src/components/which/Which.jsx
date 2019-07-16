@@ -1,14 +1,27 @@
 import React, { Component } from 'react';
+import { movieDetail } from '../../api/axios/movies';
 import './which.styl';
 class Which extends Component {
-  state = {  }
-  componentDidMount() {
-    console.log(this.props.match.url)
+  state = { 
+    detailMovie: [],
+    isShow: false
+   }
+  componentWillMount() {
+    // console.log(this.props.match.url.replace('/movie/', ''))
+    movieDetail().then(res => {
+      // console.log(res.data.data.detailMovie[1])
+      this.setState({
+        detailMovie : res.data.data.detailMovie.filter(item => item.id == this.props.match.url.replace('/movie/', '')),
+        isShow: true
+      })
+    })
   }
   back = () => {
     window.history.back();
   }
   render() {
+    const detail = this.state.detailMovie[0];
+    const { isShow } = this.state;
     return (
       <>
       <header className="navbar">
@@ -17,31 +30,28 @@ class Which extends Component {
             <i className="icon-back"></i>
           </a>
         </div>
-        <h1 className="nav-header">狮子王</h1>
+        <h1 className="nav-header">{isShow ? `${detail.nm}` : `正在加载中...`}</h1>
       </header>
       <div className="movie-detail">
         <div className="movie-filter"></div>
-        <div className="poster-bg"></div>
+        <div className="poster-bg" style={{backgroundImage: `url(${isShow ? `${detail.img}` : ``})` }}></div>
         <div className="detail box-flex">
           <div className="poster-two">
-            <img src="http://p0.meituan.net/148.208/moviemachine/7b9b0725ab5feae642e1fbba9fbb90fe3702078.jpg" alt="" width="85" height="115"/>
+            <img src={isShow ? `${detail.img}` : ``} alt=""/>
           </div>
           <div className="content flex">
-            <div className="title middle line-ellipsis">狮子王</div>
-            <div className="title-en-name line-ellipsis">The Lion King</div>
-            <div className="score line-ellipsis">8.9 <span className="snum">(9.4万人评)</span></div>
+            <div className="title-two middle line-ellipsis">{isShow ? `${detail.nm}` : ``}</div>
+            <div className="title-en-name line-ellipsis">{isShow ? `${detail.enm}` : ``}</div>
+            <div className="score line-ellipsis">{isShow ? `${detail.sc}` : ``} <span className="snum">{isShow ? `(${detail.snum >= 10000 ? `${(detail.snum / 10000).toFixed(1)}万` : detail.snum}人评分)` : ``}</span></div>
             <div className="type line-ellipsis">
-              <span>剧情,动画,冒险</span>
-              <div className="type-group">
-                <img src="" alt=""className="sd-imax"/>
-              </div>
+              <span>{isShow ? `${detail.cat}` : ``}</span>
             </div>
-            <div className="src line-ellipsis">美国/118分钟</div>
-            <div className="pubDesc line-ellipsis">2019-07-12大陆上映</div>
+            <div className="src line-ellipsis">{isShow ? `${detail.src}/` : ``}{isShow ? `${detail.dur}分钟` : ``}</div>
+            <div className="pubDesc line-ellipsis">{isShow ? `${detail.pubDesc}` : ``}</div>
           </div>
-          <div className="arrow-g">
-            <img src="../../assets/images/arrow.png" alt=""/>
-          </div>
+        </div>
+        <div className="arrow-g">
+          <img src={[require('../../assets/images/arrow.png')]} alt=""/>
         </div>
       </div>
       </>
