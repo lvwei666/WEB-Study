@@ -14,6 +14,7 @@ class Scroll extends Component {
         probeType: 3,
         click: () => {}
       })
+      // console.log(this.bscroll)
       // this.bscroll.on('scroll', (e) => {
       //   this.props.onScroll(e);
       // })

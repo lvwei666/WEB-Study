@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Film from './components/film/Film';
-import Cinema from './components/cinema/Cinema';
+import Cinemas from './components/cinema/Cinema';
 import Mine from './components/mine/Mine';
 import Which from './components/which/Which';
 import './App.styl';
@@ -23,7 +23,7 @@ class App extends React.Component {
       </div>
       <Switch>
         <Route path="/movie" exact component={Film}></Route>
-        <Route path= "/cinema" component={Cinema}></Route>
+        <Route path= "/cinema" component={Cinemas}></Route>
         <Route path="/mine" component={Mine}></Route>
         <Route path="/movie/:id" component={Which}></Route>
         <Route path="/" component={Film}></Route>
