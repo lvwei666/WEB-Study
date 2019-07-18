@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; 
+import { Link } from 'react-router-dom';
 import Movies from '../../common/movies/Movies';
 import { getMovies, getMovies2, getMovies3 } from '../../api/axios/movies';
 import Expected from '../../common/expected/Expected';
@@ -114,7 +115,9 @@ class Film extends Component {
           </Tabs>
         </div>
         <div className="right">
+          <Link to="/search">
           <div className="search-icon"></div>
+          </Link>
         </div>
       </div>
     </div>

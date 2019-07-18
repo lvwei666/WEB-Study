@@ -4,6 +4,7 @@ import Film from './components/film/Film';
 import Cinemas from './components/cinema/Cinema';
 import Mine from './components/mine/Mine';
 import Which from './components/which/Which';
+import Search from './components/search/Search';
 import './App.styl';
 
 class App extends React.Component {
@@ -25,6 +26,7 @@ class App extends React.Component {
         <Route path="/movie" exact component={Film}></Route>
         <Route path= "/cinema" component={Cinemas}></Route>
         <Route path="/mine" component={Mine}></Route>
+        <Route path="/search" component={Search}></Route>
         <Route path="/movie/:id" component={Which}></Route>
         <Route path="/" component={Film}></Route>
       </Switch>
