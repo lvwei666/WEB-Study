@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+      }
+      #action-container {
+        width: 100%;
+        height: 100%;
+        background:darkcyan;
+        margin-left: 0;
+      }
+      #container {
+        width: 200px;
+        height: 1000px;
+        position: absolute;
+        top: 0;
+        left: -200px;
+        background: red;
+      }
+      </style>    
+</head>
+<body>
+  <div id="action-container">
+    <button id="action">抽屉</button>
+  </div>
+  <div id="container"></div>
+  <script src="./drawer.js"></script>
+  <script>
+    let status = true;
+    const action = document.getElementById('action');
+    const actionContainer = document.getElementById('action-container');
+    const drawer = new Drawer({
+      enterDOM: container,
+      leaveDOM: actionContainer
+    });
+    drawer.duration = 5;
+    action.addEventListener('click', () => {
+      if (status) {
+        drawer.enter();
+      } else {
+        drawer.leave();
+      }
+      status = !status;
+    })
+  </script>
+</body>
+</html>
