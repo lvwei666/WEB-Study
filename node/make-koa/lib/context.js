@@ -1,4 +1,5 @@
-module.exports = {}
+const delegates = require('delegates');
+var proto = module.exports = {}
 
 // 代理
 // ctx.request.url
