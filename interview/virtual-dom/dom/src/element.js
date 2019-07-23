@@ -50,5 +50,6 @@ export {
   Element,
   createElement,
   render,
+  setAttr,
   renderDOM
 }
