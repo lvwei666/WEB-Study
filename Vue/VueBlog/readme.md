@@ -10,3 +10,7 @@ mvc controller => model => controller => html => http response .vue放到后端�
 mvvm webpack => .js => render => root (JS DOM)
 加载的过程
 asyncData
+- nuxt 配置
+  nuxt.config.js
+  layout SEO
+  plugins:
