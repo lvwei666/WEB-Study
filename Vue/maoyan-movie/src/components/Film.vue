@@ -8,7 +8,13 @@
       </div>
       <div class="mid">
         <el-tabs v-model="activeName" @tab-click="handleClick">
-          <el-tab-pane label="正在热映" name="first">正在热映</el-tab-pane>
+          <el-tab-pane label="正在热映" name="first">
+            <div class="movie" :style="{height: height + 'px' }">
+              <div class="item" v-for="(movie, index) in movies" :key="index">
+                <Movie :movie="movie"/>
+              </div>
+            </div>
+          </el-tab-pane>
           <el-tab-pane label="即将上映" name="second">即将上映</el-tab-pane>
         </el-tabs>
       </div>
@@ -23,15 +29,109 @@
 
 <script>
 import Header from '../common/Header'
+import Movie from '../common/Movie'
 export default {
   name: 'Film',
   data() {
     return {
-      activeName: 'first'
+      activeName: 'first',
+      height: 300,
+      movies: [{
+      "id": 1218141,
+      "haspromotionTag": false,
+      "img": "http://p0.meituan.net/128.180/movie/8d3efdc44af04c3254fc9e4ad5334ae32660685.jpg",
+      "version": "",
+      "nm": "扫毒2天地对决",
+      "preShow": false,
+      "sc": 9,
+      "globalReleased": false,
+      "wish": 320805,
+      "star": "刘德华,古天乐,苗侨伟",
+      "rt": "2019-07-05",
+      "showInfo": "今天61家影院放映1116场",
+      "showst": 3,
+      "wishst": 0
+    },{
+      "id": 1218141,
+      "haspromotionTag": false,
+      "img": "http://p0.meituan.net/128.180/movie/8d3efdc44af04c3254fc9e4ad5334ae32660685.jpg",
+      "version": "",
+      "nm": "扫毒2天地对决",
+      "preShow": false,
+      "sc": 9,
+      "globalReleased": true,
+      "wish": 320805,
+      "star": "刘德华,古天乐,苗侨伟",
+      "rt": "2019-07-05",
+      "showInfo": "今天61家影院放映1116场",
+      "showst": 3,
+      "wishst": 0
+    },{
+      "id": 1218141,
+      "haspromotionTag": false,
+      "img": "http://p0.meituan.net/128.180/movie/8d3efdc44af04c3254fc9e4ad5334ae32660685.jpg",
+      "version": "",
+      "nm": "扫毒2天地对决",
+      "preShow": false,
+      "sc": 9,
+      "globalReleased": true,
+      "wish": 320805,
+      "star": "刘德华,古天乐,苗侨伟",
+      "rt": "2019-07-05",
+      "showInfo": "今天61家影院放映1116场",
+      "showst": 3,
+      "wishst": 0
+    },{
+      "id": 1218141,
+      "haspromotionTag": false,
+      "img": "http://p0.meituan.net/128.180/movie/8d3efdc44af04c3254fc9e4ad5334ae32660685.jpg",
+      "version": "",
+      "nm": "扫毒2天地对决",
+      "preShow": false,
+      "sc": 9,
+      "globalReleased": true,
+      "wish": 320805,
+      "star": "刘德华,古天乐,苗侨伟",
+      "rt": "2019-07-05",
+      "showInfo": "今天61家影院放映1116场",
+      "showst": 3,
+      "wishst": 0
+    },{
+      "id": 1218141,
+      "haspromotionTag": false,
+      "img": "http://p0.meituan.net/128.180/movie/8d3efdc44af04c3254fc9e4ad5334ae32660685.jpg",
+      "version": "",
+      "nm": "扫毒2天地对决",
+      "preShow": false,
+      "sc": 9,
+      "globalReleased": true,
+      "wish": 320805,
+      "star": "刘德华,古天乐,苗侨伟",
+      "rt": "2019-07-05",
+      "showInfo": "今天61家影院放映1116场",
+      "showst": 3,
+      "wishst": 0
+    },{
+      "id": 1218141,
+      "haspromotionTag": false,
+      "img": "http://p0.meituan.net/128.180/movie/8d3efdc44af04c3254fc9e4ad5334ae32660685.jpg",
+      "version": "",
+      "nm": "扫毒2天地对决",
+      "preShow": false,
+      "sc": 9,
+      "globalReleased": true,
+      "wish": 320805,
+      "star": "刘德华,古天乐,苗侨伟",
+      "rt": "2019-07-05",
+      "showInfo": "今天61家影院放映1116场",
+      "showst": 3,
+      "wishst": 0
+    }]
     }
   },
   components: {
-    'v-header': Header
+    'v-header': Header,
+    Movie
   },
   methods: {
     handleClick(tab, event) {
@@ -47,6 +147,8 @@ export default {
 .el-tabs__item
   font-size 15px
   font-weight 700
+  &:hover
+    color black
 .is-active
   font-style 15px
   font-weight 700
@@ -54,20 +156,21 @@ export default {
 .el-tabs__nav-wrap::after
   height 0
 .el-tabs__active-bar
-  height 1px
   background-color #ef4238 !important
 .el-tabs__header 
   margin 0
+.el-tabs__content
+  position fixed
+  left 0
+  width 100vw
 .topbar
   display flex
   border-bottom 1px solid #e6e6e6
   height 44px
 
 .movie
-  position fixed
-  left 15px
-  width 98vw
-  padding-right 15px
+  padding-right 10px
+  padding-left 15px
   overflow-y scroll
 
 .left, .mid, .right
@@ -127,4 +230,7 @@ export default {
   margin 0
   font-size 14px
   color #333
+
+.item 
+  position relative
 </style>

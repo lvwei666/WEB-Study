@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import Film from '@/components/Film'
 import Cinema from '@/components/Cinema'
 import Mine from '@/components/Mine'
-import Search from '@/components/search'
+import Search from '@/components/Search'
+import Which from '@/components/Which'
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/which/:id',
+      name: 'Which',
+      component: Which
     }
   ]
 })
