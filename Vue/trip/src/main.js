@@ -3,20 +3,16 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from './vuex/store'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import VueLazyload from 'vue-lazyload';
+import mandMobile from 'mand-mobile'
+import 'mand-mobile/lib/mand-mobile.css'
 
-Vue.use(ElementUI)
-Vue.use(VueLazyload)
+Vue.use(mandMobile)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  store,
   components: { App },
   template: '<App/>'
 })

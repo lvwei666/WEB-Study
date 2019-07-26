@@ -7,7 +7,7 @@
           <span :class="index == '0' ? 'nav-text active' : 'nav-text'">电影</span>
         </div>
       </router-link>
-      <router-link to="/cinema">
+      <router-link to="/cinemas">
         <div class="nav-icon-wrapper" data-index="1" @click="changeActive">
           <img :src="index == '1' ? require('./assets/images/cinema-active.png') : require('./assets/images/cinema.png')" alt="" class="nav-icons">
           <span :class="index == '1' ? 'nav-text active' : 'nav-text'">影院</span>

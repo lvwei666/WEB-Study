@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Film from '@/components/Film'
-import Cinema from '@/components/Cinema'
+import Cinemas from '@/components/Cinemas'
 import Mine from '@/components/Mine'
 import Search from '@/components/Search'
 import Which from '@/components/Which'
@@ -21,9 +21,9 @@ export default new Router({
       component: Film
     },
     {
-      path: '/cinema',
-      name: 'Cinema',
-      component: Cinema
+      path: '/cinemas',
+      name: 'Cinemas',
+      component: Cinemas
     },
     {
       path: '/mine',

@@ -3,9 +3,7 @@
     <routerLink :to="{name: 'Which', params: {id: movie.id}}">
     <div class="main-block">
       <div class="avatar">
-        <!-- <LazyLoad> -->
-        <img :src="movie.img" width="64" height="90" alt />
-        <!-- </LazyLoad> -->
+        <img v-lazy="movie.img" width="64" height="90" alt />
       </div>
       <div class="content-wrapper">
         <div class="content">
@@ -46,13 +44,13 @@ export default {
   props: {
     movie: {
       type: Object,
-      default: []
+      default: {}
     }
   }
 };
 </script>
 
-<style scope lang="stylus">
+<style scoped lang="stylus">
 .main-block
   display flex
   align-items center
