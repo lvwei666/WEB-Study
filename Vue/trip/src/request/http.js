@@ -52,6 +52,39 @@ var request = (options) => {
     Toast.failed(err.message)
     throw err
   }).catch((err) => {
-    
+    Toast.failed('请求失败')
+    throw err
+  })
+}
+
+// http请求方式
+export const http = {}
+const methods = ['get', 'post', 'put', 'delete']
+methods.forEach(method => {
+  http[method] = (url, params = {}) => {
+    if (method === 'get') {
+      return request({url, params, method})
+    }
+    return request({url, body: stringify(params), method})
+  }
+})
+
+export default function plugin (Vue) {
+  if (plugin.installed) {
+    return 
+  }
+  plugin.installed = true
+  Object.defineProperties(Vue.prototype, {//该方法直接作用在一个对象上定义新的属性或修改现有属性，并返回新对象
+    $http: {
+      get () {
+        const obj = {
+          get: http['get'],
+          post: http['post'],
+          put: http['put'],
+          delete: http['delete']
+        }
+        return obj
+      }
+    }
   })
 }

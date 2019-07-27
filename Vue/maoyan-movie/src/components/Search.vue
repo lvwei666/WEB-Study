@@ -15,17 +15,16 @@
         <div class="search-header">
           <div class="input-wrapper">
             <img src="../assets/images/searchCinema.png" alt="" class="search-icon-in"/>
-            <input @change="_onChange" type="text" class="search-input" placeholder="搜电影" v-model="content"/>
+            <input type="text" class="search-input" placeholder="搜电影" v-model="content"/>
           </div>
           <div class="cancel" @click="back">取消</div>
         </div>
       </div>
       <div class="search-result">
-        <div v-for="(movie, index) in searchMovie2" :key="index">
+        <div v-for="(movie, index) in searchMovie" :key="index">
         <Movies :movie="movie"></Movies>
         </div>
       </div>
-      <div>{{content}}</div>
     </div>
   </div>
 </template>
@@ -50,21 +49,14 @@ export default {
   methods: {
     back () {
       window.history.back()
-    },
-    _onChange (e) {
-    //   let value = e.target.value;
-    //   console.log(value)
-    //   if (value !== '') {
-    //     this.searchMovie = this.allMovies.slice(0).filter((item) => {
-    //       return item.nm.includes(value)
-    //     })
-    //   }
     }
   },
   watch: {
-    content: function (newVal, oldVal) {
-      for (let i of newVal) {
-        if ()
+    content(newVal, oldVal) {
+      if (newVal != '') {
+        this.searchMovie = this.allMovies.slice(0).filter((item) => {
+          return item.nm.includes(newVal)
+        })
       }
     }
   },
