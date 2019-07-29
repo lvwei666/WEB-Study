@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>页面内容</div>
+  <script>
+      function createBrowserHistory() {
+        let listeners = [];
+        function listen(fn) {
+          listeners.push(fn);
+        }
+        function notifyListeners() {
+          listeners.forEach(cb => cb());
+        }
+        function push(...args) {
+          // 知道
+          notifyListeners()
+          window.history.pushState(...args)
+        }
+        function replace(...args) {
+          notifyListeners()
+          window.history.replaceState(...args)
+        }
+        window.onpopstate = function() {
+          notifyListeners()
+        }
+        return {
+          listen,
+          push
+        } 
+      }
+      const history = createBrowserHistory();
+      history.listen(() => { console.log('change') })
+      history.push({ a: 1 }, 'a1', '/a1');
+      history.push({ a: 2 }, 'a2', '/a2');
+  </script>
+</body>
+</html>
