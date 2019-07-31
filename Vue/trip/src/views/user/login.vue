@@ -41,7 +41,18 @@ export default {
     }
   },
   methods: {
-    loginOnClick: () => {}
+    loginOnClick: () => {
+      this.loginAjax()
+    },
+    loginAjax() {
+      let params = {
+        userName: this.user.phone,
+        password: this.userName
+      }
+      this.$http.post('/user', params).then(res => {
+        console.log(res)
+      })
+    }
   }
 }
 </script>
